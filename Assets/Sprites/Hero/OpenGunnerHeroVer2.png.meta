@@ -1,0 +1,2802 @@
+fileFormatVersion: 2
+guid: ad464daa9c2f14141afa7832d6b8f34b
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 8020311967177255252
+    second: OpenGunnerHeroVer2_0
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 50
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Hero_Dash_Smoke_3
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 710
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 12db3b4d0121dd844b8172d76a12e86c
+      internalID: -287608721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpenGunnerHeroVer2_41
+      rect:
+        serializedVersion: 2
+        x: 728
+        y: 710
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 367391c5560c4484887003e5b70f73ed
+      internalID: -916367311
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Dash_Smoke_4
+      rect:
+        serializedVersion: 2
+        x: 737
+        y: 710
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f9e4ea0d793872c44a73597e21a8278e
+      internalID: -1158746302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Dash_Smoke_5
+      rect:
+        serializedVersion: 2
+        x: 746
+        y: 710
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 633cf7ce071bf7542bed1305d6f16078
+      internalID: 1899192473
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Dash_Smoke_6
+      rect:
+        serializedVersion: 2
+        x: 755
+        y: 710
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bd6ae19f9cf4eb343b65a86c327a639f
+      internalID: -2039062614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Dash_Smoke_7
+      rect:
+        serializedVersion: 2
+        x: 764
+        y: 710
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 23f9f8775f0c4bc4d8ff7d16b1569a43
+      internalID: -358332547
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Dash_Smoke_8
+      rect:
+        serializedVersion: 2
+        x: 773
+        y: 710
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8dd83588523a55419bcc2b48081cb23
+      internalID: -1294686935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Right_Gun_Up+Right_8
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 298
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9b74f9b52dd9b64499fb175cf1241cd9
+      internalID: -23322187
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Left_Gun_Down+Left_1
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 160
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1c16b041acc25fe4a9d6302886c60bfe
+      internalID: 392531749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Left_Gun_Down+Left_2
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 160
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1bf89b8084f75cd478726324173538b7
+      internalID: 726401615
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Left_Gun_Down+Left_3
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 160
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 488db3997f85d064b90ca3aa6110cf60
+      internalID: 1553446490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Left_Gun_Down+Left_4
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 160
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 143ccad6854690c42aa3629ac78f4f2a
+      internalID: 1583300075
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpenGunnerHeroVer2_52
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 160
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a6d98f98960cc347909fa5c29bf2458
+      internalID: 1453421592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Left_Gun_Down+Left_5
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 160
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1330fa0716e886347965ff4bf01befb9
+      internalID: 236657840
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpenGunnerHeroVer2_54
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 160
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 491beff8b70c33b4ea3043dc9346b9e1
+      internalID: 254607488
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Stand_Right
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1087
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9191a98d6d8a7734693b360fea5d4668
+      internalID: 1973547587
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpenGunnerHeroVer2_61
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 160
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3291ed9224e41374c8613cdb7e04cf78
+      internalID: -1635512946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Duck_Right
+      rect:
+        serializedVersion: 2
+        x: 74
+        y: 1087
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: db8043769ecd6464bbfe5826ea843693
+      internalID: 598668577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Jump_Right
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 1087
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0dc307efc996bec4493d5ae244fae3c7
+      internalID: -1911063252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Damage_Right
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 1088
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 24203cd49ca0ff24ab4a67cdf79ad135
+      internalID: 643820822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Stand_Left
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 1030
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67aad878e735a3442986cc3680322517
+      internalID: -202172446
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Duck_Left
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 1030
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6f74a00b132fdf54cb10f58b3bede65d
+      internalID: 520406016
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Jump_Left
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 1030
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aeabeacf6339aec42b76016a1fac3983
+      internalID: -1651722225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Damage_Left
+      rect:
+        serializedVersion: 2
+        x: 202
+        y: 1030
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9ccfdd05bedd73f408bf19dbbf631da9
+      internalID: -267477387
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Run_Right_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 915
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 029d963a99d03f84089cbc18e3662d36
+      internalID: -1357443297
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Run_Right_2
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 915
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6c1b1b825d5e3bd44a8bc799da254710
+      internalID: 999691730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Run_Right_3
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 915
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 99755b784a5c378478d50db557e62a1b
+      internalID: 452223511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Run_Right_4
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 915
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0e0c6b0d03bc074408ccfcdb9a4211d0
+      internalID: 1054129145
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Run_Right_5
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 915
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 765bc69b669c6bc45b4ac8bbebc07484
+      internalID: -1711159006
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Run_Right_6
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 915
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22ece8ef0f422ff4cbcd653e87a4c79e
+      internalID: 694021406
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Run_Right_7
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 915
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5dba917a717e10d4db17f1b028cc99ab
+      internalID: 1097939605
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Run_Right_8
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 915
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 97752bec20a1b8e40a054cda3fbf1e35
+      internalID: 1451436268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Ladder_Climb_1
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 934
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dbcf9b80b2e87a545ac18ea96f830bc5
+      internalID: 980077589
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Ladder_Climb_2
+      rect:
+        serializedVersion: 2
+        x: 530
+        y: 934
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 094b50e4c5676a94c84e2aacf81d1ff3
+      internalID: -1647312289
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Ladder_Climb_3
+      rect:
+        serializedVersion: 2
+        x: 581
+        y: 934
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: eb466e948187bc94aafc345feea3eee6
+      internalID: -1188319374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Ladder_Climb_4
+      rect:
+        serializedVersion: 2
+        x: 632
+        y: 934
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5519f714c7bbb3a4d9d05ba486ab2187
+      internalID: -330429268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Run_Left_1
+      rect:
+        serializedVersion: 2
+        x: 24
+        y: 855
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77223ba024e740f448008ed59e35e79f
+      internalID: 1711329556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Run_Left_2
+      rect:
+        serializedVersion: 2
+        x: 75
+        y: 855
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40ba047256273824b818c414af414097
+      internalID: 620164068
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Run_Left_3
+      rect:
+        serializedVersion: 2
+        x: 126
+        y: 855
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b5743d0ce8296e7429f00a1bf6542a4f
+      internalID: -672762132
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Run_Left_4
+      rect:
+        serializedVersion: 2
+        x: 177
+        y: 855
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61a4cbfebf72b1043b26737dabf00998
+      internalID: 1213228496
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Run_Left_5
+      rect:
+        serializedVersion: 2
+        x: 228
+        y: 855
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 67db3e3da3ebca34ab9e2b054285e17f
+      internalID: 2138497490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Run_Left_6
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 855
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7567a40af3ef1e49a2884e7dbeb011a
+      internalID: -396047563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Run_Left_7
+      rect:
+        serializedVersion: 2
+        x: 330
+        y: 855
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 941b77d27d3c95246bdbc77dcb85af63
+      internalID: -588163360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Run_Left_8
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 855
+        width: 50
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 52959da71ca3ce4439da175d95e5451d
+      internalID: -890733362
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Ladder_Shoot_Right
+      rect:
+        serializedVersion: 2
+        x: 479
+        y: 852
+        width: 67
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b99ba2397b1a3e04dba5c7a7943ea172
+      internalID: -787943112
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Ladder_Shoot_Left
+      rect:
+        serializedVersion: 2
+        x: 547
+        y: 852
+        width: 67
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b1c1de37474354749b11e2536d19cec4
+      internalID: 1621389896
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Ground_Right
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 731
+        width: 70
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d59073787734f4643af888bb7fc14234
+      internalID: -508074970
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Ground_Left
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 731
+        width: 70
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 861d0b92cfdac8a42aeebec89ab01c60
+      internalID: 282043495
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Crawl_Right_1
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 731
+        width: 70
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e9c130618d4ff848b2b7b3ad7616a2c
+      internalID: -984108669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Crawl_Right_2
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 731
+        width: 70
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84b43268cd467ee49887474d2be98b2c
+      internalID: -627090245
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Crawl_Right_3
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 731
+        width: 70
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0cea03bd7292d13488008c5e05c4bdd5
+      internalID: -1341274681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Crawl_Right_4
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 731
+        width: 70
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6730cd6830d11e4f917f6ccb5dfbf8a
+      internalID: -727068511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Dash_Right
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 731
+        width: 70
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c7cac10a8f779a4ca014264e7c9ba42
+      internalID: 1400820028
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Dash_Shoot_Right
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 731
+        width: 70
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 80356a9f0cbcd9a40a7657a2ad278ecf
+      internalID: -1299824686
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Crawl_Left_1
+      rect:
+        serializedVersion: 2
+        x: 190
+        y: 673
+        width: 70
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c8adcab5650f96a438e30789ac600ad7
+      internalID: 371032327
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Crawl_Left_2
+      rect:
+        serializedVersion: 2
+        x: 261
+        y: 673
+        width: 70
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6cd2bb982e191694c8261170409a17e1
+      internalID: 1328748724
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Crawl_Left_3
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 673
+        width: 70
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9bc52ea311e5f0e409f1d3fea966f7e8
+      internalID: -684981762
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Crawl_Left_Four
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 673
+        width: 70
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a4c07d035947414c9c9e7cf6cdc8d37
+      internalID: 1954656265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Dash_Left
+      rect:
+        serializedVersion: 2
+        x: 503
+        y: 673
+        width: 70
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8413b64e2f42284da3aa624d82060a2
+      internalID: -2079499184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Dash_Shoot_Left
+      rect:
+        serializedVersion: 2
+        x: 574
+        y: 673
+        width: 70
+        height: 50
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 662aa873ffb6868439c55e6842452b1c
+      internalID: 1830707986
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Dash_Smoke_1
+      rect:
+        serializedVersion: 2
+        x: 710
+        y: 710
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 09ae849f333ea0f47b356ea06ff12336
+      internalID: -1151445626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Standing_Right_Gun_Up+Right
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 547
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 177a1f8a0b129ec42ab4c068bddc1866
+      internalID: -1809840428
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Right_Gun_Up+Right_1
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 298
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8703f0e4501dfc1419a0c991ddd24d50
+      internalID: 1524179861
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Right_Gun_Down+Right_1
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 298
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd9400e7a155f4442af8c78d8518f1b2
+      internalID: 23790841
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Left_Gun_Up+Left_1
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 160
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8e9578ba06878c45821ed4c25c0a376
+      internalID: 1047693275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Dash_Smoke_
+      rect:
+        serializedVersion: 2
+        x: 719
+        y: 710
+        width: 8
+        height: 8
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cdda2db0d7a222d44ba9c56df74508a7
+      internalID: 1220537066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Standing_Right_Gun_Up
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 547
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2167620a913338e4c9af64dcb3940dfe
+      internalID: -1421664908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Standing_Left_Gun_Up
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 547
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7aca72c4aa4d6c941917d15735e14bbb
+      internalID: 1787229903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Standing_Left_Gun_Up+Left
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 547
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4c2fc05462d4f9949bf42df27ab37243
+      internalID: 1051504848
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Standing_Right_Gun_Down+Right
+      rect:
+        serializedVersion: 2
+        x: 81
+        y: 484
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 753aca3f8721eb448987b99a44a4f606
+      internalID: 1790109799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Standing_Right_Gun_Down
+      rect:
+        serializedVersion: 2
+        x: 137
+        y: 484
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dce57d6fc3ffb2e48809171334e3af1c
+      internalID: -542957370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Standing_Left_Gun_Down
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 484
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b25656a25d661454fb9e5565b9bed93e
+      internalID: 943353394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Standing_Left_Gun_Down+Left
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 484
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 1a78dab4923e839479a02a72cf197745
+      internalID: -1690878277
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Right_Gun_Up+Right_2
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 298
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6919ac0304359d441ae3d49c35505579
+      internalID: -1824486552
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Right_Gun_Up+Right_3
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 298
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6021a2960f583604c9982ee99496cf91
+      internalID: -1861956677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Right_Gun_Up+Right_4
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 298
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 91f2175dcd0c0d74585043afd8f0bc75
+      internalID: 1305388749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Right_Gun_Up+Right_5
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 298
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0f0f85f8692cae94eadd9466139e945f
+      internalID: 130456305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Right_Gun_Up+Right_6
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 298
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 879bb1ea902e5734ea91c167b094a63d
+      internalID: -14543908
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Right_Gun_Up+Right_7
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 298
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 055a74616dcd4814bb6ad62b96c422cb
+      internalID: -2042590504
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Left_Gun_Up+Left_2
+      rect:
+        serializedVersion: 2
+        x: 76
+        y: 160
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d59092fff8b3f9a46b34b5f2893da8ad
+      internalID: -40293776
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Left_Gun_Up+Left_3
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 161
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd578a8140908a84f8b43dc1fbce4c87
+      internalID: -609709023
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Left_Gun_Up+Left_4
+      rect:
+        serializedVersion: 2
+        x: 178
+        y: 160
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 08531fcf2b6fe2f49979d241f2a4a926
+      internalID: -813380520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Left_Gun_Up+Left_5
+      rect:
+        serializedVersion: 2
+        x: 229
+        y: 160
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5913005db7078234da498748e3c36412
+      internalID: 1996026173
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Left_Gun_Up+Left_6
+      rect:
+        serializedVersion: 2
+        x: 280
+        y: 160
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a18b7fd5c9f3cdf4ba039dc486f50017
+      internalID: 1118564305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Left_Gun_Up+Left_7
+      rect:
+        serializedVersion: 2
+        x: 331
+        y: 160
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8cf4d580c4eac149ad1d29dbeb5a66d
+      internalID: 1753544380
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Left_Gun_Up+Left_8
+      rect:
+        serializedVersion: 2
+        x: 382
+        y: 160
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 11f5fd41d58549a49af2f73229ff518f
+      internalID: 539194247
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Right_Gun_Down+Right_2
+      rect:
+        serializedVersion: 2
+        x: 505
+        y: 298
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 962ee327a67ed6247bf6797c2a147f5c
+      internalID: -1335528170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Right_Gun_Down+Right_3
+      rect:
+        serializedVersion: 2
+        x: 556
+        y: 298
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 520651b4bfaa5df43b511dc36a9de46a
+      internalID: -1952104501
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Right_Gun_Down+Right_4
+      rect:
+        serializedVersion: 2
+        x: 607
+        y: 298
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a8d6492406bc44345a64e71b0d62bd14
+      internalID: 780298883
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Right_Gun_Down+Right_5
+      rect:
+        serializedVersion: 2
+        x: 658
+        y: 298
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d3f2bc3b8c671a4d99cb7bbc8c5b1ad
+      internalID: 1433776849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Right_Gun_Down+Right_6
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 298
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4bca4235868bcb449ade049c5ff35c8f
+      internalID: 1360729476
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Right_Gun_Down+Right_7
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 298
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5da039379cb37cc41a89542496a84631
+      internalID: 850933420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Right_Gun_Down+Right_8
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 298
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e2e876e2df817614f84acebfbe32b53e
+      internalID: -1005023797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Left_Gun_Down+Left_6
+      rect:
+        serializedVersion: 2
+        x: 709
+        y: 160
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3163182bec7de694bbeecf29580b7d23
+      internalID: 845440323
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Left_Gun_Down+Left_7
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 160
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de60eda389d8140428819720ff342656
+      internalID: 978026540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: OpenGunnerHeroVer2_63
+      rect:
+        serializedVersion: 2
+        x: 760
+        y: 160
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6ff760cd82734e9498ce7889bd6e88f7
+      internalID: -441135184
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hero_Running_Left_Gun_Down+Left_8
+      rect:
+        serializedVersion: 2
+        x: 811
+        y: 160
+        width: 50
+        height: 57
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbbaacd402362dc4d95ca538dec94d76
+      internalID: -1788758757
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 64bddb9e936061949a06fa47b44e1000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":50.0,"y":50.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      2: 1220537066
+      Hero_Crawl_Left_1: 371032327
+      Hero_Crawl_Left_2: 1328748724
+      Hero_Crawl_Left_3: -684981762
+      Hero_Crawl_Left_Four: 1954656265
+      Hero_Crawl_Right_1: -984108669
+      Hero_Crawl_Right_2: -627090245
+      Hero_Crawl_Right_3: -1341274681
+      Hero_Crawl_Right_4: -727068511
+      Hero_Damage_Left: -267477387
+      Hero_Damage_Right: 643820822
+      Hero_Dash_Left: -2079499184
+      Hero_Dash_Right: 1400820028
+      Hero_Dash_Shoot_Left: 1830707986
+      Hero_Dash_Shoot_Right: -1299824686
+      Hero_Dash_Smoke_: 1220537066
+      Hero_Dash_Smoke_1: -1151445626
+      Hero_Dash_Smoke_3: -287608721
+      Hero_Dash_Smoke_4: -1158746302
+      Hero_Dash_Smoke_5: 1899192473
+      Hero_Dash_Smoke_6: -2039062614
+      Hero_Dash_Smoke_7: -358332547
+      Hero_Dash_Smoke_8: -1294686935
+      Hero_Duck_Left: 520406016
+      Hero_Duck_Right: 598668577
+      Hero_Ground_Left: 282043495
+      Hero_Ground_Right: -508074970
+      Hero_Jump_Left: -1651722225
+      Hero_Jump_Right: -1911063252
+      Hero_Ladder_Climb_1: 980077589
+      Hero_Ladder_Climb_2: -1647312289
+      Hero_Ladder_Climb_3: -1188319374
+      Hero_Ladder_Climb_4: -330429268
+      Hero_Ladder_Shoot_Left: 1621389896
+      Hero_Ladder_Shoot_Right: -787943112
+      Hero_Run_Left_1: 1711329556
+      Hero_Run_Left_2: 620164068
+      Hero_Run_Left_3: -672762132
+      Hero_Run_Left_4: 1213228496
+      Hero_Run_Left_5: 2138497490
+      Hero_Run_Left_6: -396047563
+      Hero_Run_Left_7: -588163360
+      Hero_Run_Left_8: -890733362
+      Hero_Run_Right_1: -1357443297
+      Hero_Run_Right_2: 999691730
+      Hero_Run_Right_3: 452223511
+      Hero_Run_Right_4: 1054129145
+      Hero_Run_Right_5: -1711159006
+      Hero_Run_Right_6: 694021406
+      Hero_Run_Right_7: 1097939605
+      Hero_Run_Right_8: 1451436268
+      Hero_Running_Left_Gun_Down+Left_1: 392531749
+      Hero_Running_Left_Gun_Down+Left_2: 726401615
+      Hero_Running_Left_Gun_Down+Left_3: 1553446490
+      Hero_Running_Left_Gun_Down+Left_4: 1583300075
+      Hero_Running_Left_Gun_Down+Left_5: 236657840
+      Hero_Running_Left_Gun_Down+Left_6: 845440323
+      Hero_Running_Left_Gun_Down+Left_7: 978026540
+      Hero_Running_Left_Gun_Down+Left_8: -1788758757
+      Hero_Running_Left_Gun_Up+Left_1: 1047693275
+      Hero_Running_Left_Gun_Up+Left_2: -40293776
+      Hero_Running_Left_Gun_Up+Left_3: -609709023
+      Hero_Running_Left_Gun_Up+Left_4: -813380520
+      Hero_Running_Left_Gun_Up+Left_5: 1996026173
+      Hero_Running_Left_Gun_Up+Left_6: 1118564305
+      Hero_Running_Left_Gun_Up+Left_7: 1753544380
+      Hero_Running_Left_Gun_Up+Left_8: 539194247
+      Hero_Running_Right_Gun_Down+Right_1: 23790841
+      Hero_Running_Right_Gun_Down+Right_2: -1335528170
+      Hero_Running_Right_Gun_Down+Right_3: -1952104501
+      Hero_Running_Right_Gun_Down+Right_4: 780298883
+      Hero_Running_Right_Gun_Down+Right_5: 1433776849
+      Hero_Running_Right_Gun_Down+Right_6: 1360729476
+      Hero_Running_Right_Gun_Down+Right_7: 850933420
+      Hero_Running_Right_Gun_Down+Right_8: -1005023797
+      Hero_Running_Right_Gun_Up+Right_1: 1524179861
+      Hero_Running_Right_Gun_Up+Right_2: -1824486552
+      Hero_Running_Right_Gun_Up+Right_3: -1861956677
+      Hero_Running_Right_Gun_Up+Right_4: 1305388749
+      Hero_Running_Right_Gun_Up+Right_5: 130456305
+      Hero_Running_Right_Gun_Up+Right_6: -14543908
+      Hero_Running_Right_Gun_Up+Right_7: -2042590504
+      Hero_Running_Right_Gun_Up+Right_8: -23322187
+      Hero_Stand_Left: -202172446
+      Hero_Stand_Right: 1973547587
+      Hero_Standing_Left_Gun_Down: 943353394
+      Hero_Standing_Left_Gun_Down+Left: -1690878277
+      Hero_Standing_Left_Gun_Up: 1787229903
+      Hero_Standing_Left_Gun_Up+Left: 1051504848
+      Hero_Standing_Right_Gun_Down: -542957370
+      Hero_Standing_Right_Gun_Down+Right: 1790109799
+      Hero_Standing_Right_Gun_Up: -1421664908
+      Hero_Standing_Right_Gun_Up+Right: -1809840428
+      OpenGunnerHeroVer2_0: 8020311967177255252
+      OpenGunnerHeroVer2_1: 1696491305
+      OpenGunnerHeroVer2_10: 2041835394
+      OpenGunnerHeroVer2_100: 1371858634
+      OpenGunnerHeroVer2_101: 1628480747
+      OpenGunnerHeroVer2_102: 359391777
+      OpenGunnerHeroVer2_103: -120877836
+      OpenGunnerHeroVer2_104: -279801437
+      OpenGunnerHeroVer2_105: 556350072
+      OpenGunnerHeroVer2_106: -1949312783
+      OpenGunnerHeroVer2_107: -1870864126
+      OpenGunnerHeroVer2_108: 1640449748
+      OpenGunnerHeroVer2_109: -1237270408
+      OpenGunnerHeroVer2_11: -1145837030
+      OpenGunnerHeroVer2_110: 1278833550
+      OpenGunnerHeroVer2_111: -2142093038
+      OpenGunnerHeroVer2_112: -1784329722
+      OpenGunnerHeroVer2_113: -1819153668
+      OpenGunnerHeroVer2_114: 1512627472
+      OpenGunnerHeroVer2_115: -1878014681
+      OpenGunnerHeroVer2_116: 1878057652
+      OpenGunnerHeroVer2_117: 213382920
+      OpenGunnerHeroVer2_118: 1415764989
+      OpenGunnerHeroVer2_119: 1376486211
+      OpenGunnerHeroVer2_12: 443649574
+      OpenGunnerHeroVer2_128: 747776590
+      OpenGunnerHeroVer2_129: -613664276
+      OpenGunnerHeroVer2_13: 383262615
+      OpenGunnerHeroVer2_134: -1410830645
+      OpenGunnerHeroVer2_135: -434935729
+      OpenGunnerHeroVer2_136: 591044297
+      OpenGunnerHeroVer2_137: -1748132594
+      OpenGunnerHeroVer2_138: 159841062
+      OpenGunnerHeroVer2_139: 1749242552
+      OpenGunnerHeroVer2_14: -2044662674
+      OpenGunnerHeroVer2_148: 1505223655
+      OpenGunnerHeroVer2_15: -816277422
+      OpenGunnerHeroVer2_150: -889965557
+      OpenGunnerHeroVer2_152: 1706815117
+      OpenGunnerHeroVer2_153: 279652374
+      OpenGunnerHeroVer2_154: -1409662443
+      OpenGunnerHeroVer2_155: -697123759
+      OpenGunnerHeroVer2_156: 62204301
+      OpenGunnerHeroVer2_157: 1967114636
+      OpenGunnerHeroVer2_158: -1595489567
+      OpenGunnerHeroVer2_159: 297175816
+      OpenGunnerHeroVer2_16: 1842361778
+      OpenGunnerHeroVer2_160: -366052090
+      OpenGunnerHeroVer2_161: -1168553074
+      OpenGunnerHeroVer2_162: -1514153237
+      OpenGunnerHeroVer2_163: -2122684780
+      OpenGunnerHeroVer2_164: -2039056204
+      OpenGunnerHeroVer2_165: -1297126386
+      OpenGunnerHeroVer2_166: 32659936
+      OpenGunnerHeroVer2_167: -469489507
+      OpenGunnerHeroVer2_168: -1411948319
+      OpenGunnerHeroVer2_169: 1405031274
+      OpenGunnerHeroVer2_17: 854925582
+      OpenGunnerHeroVer2_170: 2052550675
+      OpenGunnerHeroVer2_171: -1787461696
+      OpenGunnerHeroVer2_172: -1725080236
+      OpenGunnerHeroVer2_173: 1242813656
+      OpenGunnerHeroVer2_174: 2141166233
+      OpenGunnerHeroVer2_175: -1639389717
+      OpenGunnerHeroVer2_176: 1286027917
+      OpenGunnerHeroVer2_177: -1811088805
+      OpenGunnerHeroVer2_178: -991710839
+      OpenGunnerHeroVer2_179: 1278569315
+      OpenGunnerHeroVer2_18: -1415485018
+      OpenGunnerHeroVer2_180: 503911575
+      OpenGunnerHeroVer2_181: 1769677196
+      OpenGunnerHeroVer2_182: -2131996260
+      OpenGunnerHeroVer2_183: 217718748
+      OpenGunnerHeroVer2_184: 1051029396
+      OpenGunnerHeroVer2_185: 856582375
+      OpenGunnerHeroVer2_186: 99133539
+      OpenGunnerHeroVer2_187: -1415795691
+      OpenGunnerHeroVer2_188: 960725725
+      OpenGunnerHeroVer2_189: -1007942962
+      OpenGunnerHeroVer2_19: -480808459
+      OpenGunnerHeroVer2_190: 1053658884
+      OpenGunnerHeroVer2_191: -17501297
+      OpenGunnerHeroVer2_192: -687239994
+      OpenGunnerHeroVer2_193: -1343566040
+      OpenGunnerHeroVer2_194: 1385757581
+      OpenGunnerHeroVer2_195: 1120098033
+      OpenGunnerHeroVer2_196: -155352770
+      OpenGunnerHeroVer2_197: 1484132141
+      OpenGunnerHeroVer2_198: 381970439
+      OpenGunnerHeroVer2_199: -2032469984
+      OpenGunnerHeroVer2_2: 1916224785
+      OpenGunnerHeroVer2_20: -959501906
+      OpenGunnerHeroVer2_200: 153041749
+      OpenGunnerHeroVer2_203: 271966983
+      OpenGunnerHeroVer2_207: -1771432918
+      OpenGunnerHeroVer2_209: -348035975
+      OpenGunnerHeroVer2_21: 1934658424
+      OpenGunnerHeroVer2_212: 2062723227
+      OpenGunnerHeroVer2_213: -1411646302
+      OpenGunnerHeroVer2_214: 1907411252
+      OpenGunnerHeroVer2_215: 2056394937
+      OpenGunnerHeroVer2_216: 1733957648
+      OpenGunnerHeroVer2_217: -80269
+      OpenGunnerHeroVer2_218: 504600350
+      OpenGunnerHeroVer2_219: -980893462
+      OpenGunnerHeroVer2_22: -425607348
+      OpenGunnerHeroVer2_220: 1986446182
+      OpenGunnerHeroVer2_221: -163910879
+      OpenGunnerHeroVer2_222: -525770589
+      OpenGunnerHeroVer2_223: 2045368220
+      OpenGunnerHeroVer2_227: -1270687134
+      OpenGunnerHeroVer2_229: 1058206222
+      OpenGunnerHeroVer2_23: -1201367628
+      OpenGunnerHeroVer2_232: 888881264
+      OpenGunnerHeroVer2_233: 1088817274
+      OpenGunnerHeroVer2_235: -1140717200
+      OpenGunnerHeroVer2_236: -884285614
+      OpenGunnerHeroVer2_237: -1588697422
+      OpenGunnerHeroVer2_238: -232847245
+      OpenGunnerHeroVer2_239: 567072566
+      OpenGunnerHeroVer2_24: 501926785
+      OpenGunnerHeroVer2_240: 440567997
+      OpenGunnerHeroVer2_241: 1941548195
+      OpenGunnerHeroVer2_242: 1577025303
+      OpenGunnerHeroVer2_243: -2078698322
+      OpenGunnerHeroVer2_244: -973305193
+      OpenGunnerHeroVer2_245: -1553212093
+      OpenGunnerHeroVer2_246: 1603881131
+      OpenGunnerHeroVer2_247: -724516353
+      OpenGunnerHeroVer2_248: -1903673444
+      OpenGunnerHeroVer2_249: -1831251479
+      OpenGunnerHeroVer2_25: 1462939002
+      OpenGunnerHeroVer2_250: 1994702439
+      OpenGunnerHeroVer2_251: 681656084
+      OpenGunnerHeroVer2_252: 459235755
+      OpenGunnerHeroVer2_253: -1538828535
+      OpenGunnerHeroVer2_254: 497007610
+      OpenGunnerHeroVer2_255: 883137121
+      OpenGunnerHeroVer2_256: 789579938
+      OpenGunnerHeroVer2_257: -503601907
+      OpenGunnerHeroVer2_258: -185857651
+      OpenGunnerHeroVer2_259: 1030112620
+      OpenGunnerHeroVer2_26: -1879254983
+      OpenGunnerHeroVer2_260: -1139627451
+      OpenGunnerHeroVer2_261: 1868023452
+      OpenGunnerHeroVer2_263: 1390833719
+      OpenGunnerHeroVer2_264: 634700611
+      OpenGunnerHeroVer2_265: 1151378221
+      OpenGunnerHeroVer2_266: -1041852977
+      OpenGunnerHeroVer2_267: -526168627
+      OpenGunnerHeroVer2_268: 1138712197
+      OpenGunnerHeroVer2_269: 1175036268
+      OpenGunnerHeroVer2_27: 1911466328
+      OpenGunnerHeroVer2_270: -1212636927
+      OpenGunnerHeroVer2_271: -821522574
+      OpenGunnerHeroVer2_272: -2131031321
+      OpenGunnerHeroVer2_273: -2138123030
+      OpenGunnerHeroVer2_274: -668697477
+      OpenGunnerHeroVer2_275: 690030850
+      OpenGunnerHeroVer2_276: 1142829135
+      OpenGunnerHeroVer2_277: -360941359
+      OpenGunnerHeroVer2_278: -1103557748
+      OpenGunnerHeroVer2_279: -2062610908
+      OpenGunnerHeroVer2_28: -948831243
+      OpenGunnerHeroVer2_280: -1281501513
+      OpenGunnerHeroVer2_281: -1073836332
+      OpenGunnerHeroVer2_282: -1736272233
+      OpenGunnerHeroVer2_283: 1685977529
+      OpenGunnerHeroVer2_284: 403518938
+      OpenGunnerHeroVer2_285: -219933550
+      OpenGunnerHeroVer2_286: 2025790566
+      OpenGunnerHeroVer2_287: -866502879
+      OpenGunnerHeroVer2_288: 1956083863
+      OpenGunnerHeroVer2_289: 823172511
+      OpenGunnerHeroVer2_29: -2095290234
+      OpenGunnerHeroVer2_290: 696787292
+      OpenGunnerHeroVer2_291: 1361757755
+      OpenGunnerHeroVer2_292: -1038936828
+      OpenGunnerHeroVer2_293: -352841732
+      OpenGunnerHeroVer2_294: -302412811
+      OpenGunnerHeroVer2_295: -1783789136
+      OpenGunnerHeroVer2_296: 875305261
+      OpenGunnerHeroVer2_297: -115390621
+      OpenGunnerHeroVer2_298: -1914219422
+      OpenGunnerHeroVer2_299: 1226239592
+      OpenGunnerHeroVer2_3: 879666284
+      OpenGunnerHeroVer2_30: -699425101
+      OpenGunnerHeroVer2_300: -1599241900
+      OpenGunnerHeroVer2_301: -1583862576
+      OpenGunnerHeroVer2_302: -1263536341
+      OpenGunnerHeroVer2_303: 34852220
+      OpenGunnerHeroVer2_304: -2133342330
+      OpenGunnerHeroVer2_305: -1234054474
+      OpenGunnerHeroVer2_306: 1360106610
+      OpenGunnerHeroVer2_307: -1427319674
+      OpenGunnerHeroVer2_308: -255158568
+      OpenGunnerHeroVer2_309: -1776537396
+      OpenGunnerHeroVer2_31: 600295865
+      OpenGunnerHeroVer2_310: 109314283
+      OpenGunnerHeroVer2_311: -33122052
+      OpenGunnerHeroVer2_312: 737708247
+      OpenGunnerHeroVer2_313: 435004672
+      OpenGunnerHeroVer2_314: -1326717824
+      OpenGunnerHeroVer2_315: 1209595564
+      OpenGunnerHeroVer2_316: 791890300
+      OpenGunnerHeroVer2_317: -1951813658
+      OpenGunnerHeroVer2_318: -1143218358
+      OpenGunnerHeroVer2_319: 2098840761
+      OpenGunnerHeroVer2_32: 767356505
+      OpenGunnerHeroVer2_320: 1200864036
+      OpenGunnerHeroVer2_321: -948219403
+      OpenGunnerHeroVer2_322: -605732429
+      OpenGunnerHeroVer2_323: -241172283
+      OpenGunnerHeroVer2_324: 790494068
+      OpenGunnerHeroVer2_325: 716207860
+      OpenGunnerHeroVer2_326: -740448492
+      OpenGunnerHeroVer2_327: -2037337371
+      OpenGunnerHeroVer2_328: 775949141
+      OpenGunnerHeroVer2_329: 628061750
+      OpenGunnerHeroVer2_33: -617584620
+      OpenGunnerHeroVer2_330: -2082418249
+      OpenGunnerHeroVer2_331: 748595691
+      OpenGunnerHeroVer2_332: 1339572085
+      OpenGunnerHeroVer2_333: -691279875
+      OpenGunnerHeroVer2_334: 50561377
+      OpenGunnerHeroVer2_335: -1444909494
+      OpenGunnerHeroVer2_336: 1957694214
+      OpenGunnerHeroVer2_337: 1249605136
+      OpenGunnerHeroVer2_338: -184436068
+      OpenGunnerHeroVer2_339: -174490704
+      OpenGunnerHeroVer2_34: -1348254749
+      OpenGunnerHeroVer2_340: -1103335460
+      OpenGunnerHeroVer2_341: -53293489
+      OpenGunnerHeroVer2_342: -1600510402
+      OpenGunnerHeroVer2_343: 1969121741
+      OpenGunnerHeroVer2_344: 907961212
+      OpenGunnerHeroVer2_345: 1401041589
+      OpenGunnerHeroVer2_346: 848280486
+      OpenGunnerHeroVer2_347: -466469241
+      OpenGunnerHeroVer2_348: 1486098029
+      OpenGunnerHeroVer2_349: -391980331
+      OpenGunnerHeroVer2_35: -452855408
+      OpenGunnerHeroVer2_350: -688237187
+      OpenGunnerHeroVer2_351: 1288657074
+      OpenGunnerHeroVer2_352: 838372935
+      OpenGunnerHeroVer2_353: -56282479
+      OpenGunnerHeroVer2_354: 709839554
+      OpenGunnerHeroVer2_355: -1905714699
+      OpenGunnerHeroVer2_356: 1682796371
+      OpenGunnerHeroVer2_357: -1755161323
+      OpenGunnerHeroVer2_358: -373408682
+      OpenGunnerHeroVer2_359: -118161354
+      OpenGunnerHeroVer2_36: -1136064345
+      OpenGunnerHeroVer2_361: 144367167
+      OpenGunnerHeroVer2_362: -2035181280
+      OpenGunnerHeroVer2_363: -833708815
+      OpenGunnerHeroVer2_364: 2027511099
+      OpenGunnerHeroVer2_365: 1762188579
+      OpenGunnerHeroVer2_366: 939082481
+      OpenGunnerHeroVer2_367: -185223550
+      OpenGunnerHeroVer2_368: -816211184
+      OpenGunnerHeroVer2_37: 2071076015
+      OpenGunnerHeroVer2_370: -786796729
+      OpenGunnerHeroVer2_371: 436519244
+      OpenGunnerHeroVer2_372: -2113378900
+      OpenGunnerHeroVer2_373: 627443806
+      OpenGunnerHeroVer2_374: 812925426
+      OpenGunnerHeroVer2_375: 581818246
+      OpenGunnerHeroVer2_376: -1191531847
+      OpenGunnerHeroVer2_377: -683611368
+      OpenGunnerHeroVer2_378: 1148855894
+      OpenGunnerHeroVer2_379: -619553879
+      OpenGunnerHeroVer2_38: -1070551867
+      OpenGunnerHeroVer2_380: 1507079242
+      OpenGunnerHeroVer2_381: 421903464
+      OpenGunnerHeroVer2_382: 179217902
+      OpenGunnerHeroVer2_383: -928026758
+      OpenGunnerHeroVer2_384: 2121154855
+      OpenGunnerHeroVer2_385: -449529525
+      OpenGunnerHeroVer2_386: 1036755116
+      OpenGunnerHeroVer2_387: 1897155498
+      OpenGunnerHeroVer2_388: 774247120
+      OpenGunnerHeroVer2_389: -2034720961
+      OpenGunnerHeroVer2_39: 119408634
+      OpenGunnerHeroVer2_390: 2068646415
+      OpenGunnerHeroVer2_391: -1807672654
+      OpenGunnerHeroVer2_392: 1410903027
+      OpenGunnerHeroVer2_393: -300155664
+      OpenGunnerHeroVer2_394: -1918544553
+      OpenGunnerHeroVer2_395: -1488176055
+      OpenGunnerHeroVer2_396: 643897053
+      OpenGunnerHeroVer2_397: -588835835
+      OpenGunnerHeroVer2_398: -787116993
+      OpenGunnerHeroVer2_399: 1397845355
+      OpenGunnerHeroVer2_4: -95220189
+      OpenGunnerHeroVer2_400: 1311873110
+      OpenGunnerHeroVer2_401: -1065863514
+      OpenGunnerHeroVer2_402: -769939315
+      OpenGunnerHeroVer2_403: 647748088
+      OpenGunnerHeroVer2_404: 935570371
+      OpenGunnerHeroVer2_405: 1852692180
+      OpenGunnerHeroVer2_406: -749527872
+      OpenGunnerHeroVer2_407: 877414075
+      OpenGunnerHeroVer2_408: 1306101745
+      OpenGunnerHeroVer2_409: -366496034
+      OpenGunnerHeroVer2_41: -916367311
+      OpenGunnerHeroVer2_410: 1753051683
+      OpenGunnerHeroVer2_411: -149805097
+      OpenGunnerHeroVer2_412: -1521665525
+      OpenGunnerHeroVer2_413: -1838803819
+      OpenGunnerHeroVer2_414: -214895038
+      OpenGunnerHeroVer2_415: 876628043
+      OpenGunnerHeroVer2_416: -194958535
+      OpenGunnerHeroVer2_417: -995148304
+      OpenGunnerHeroVer2_418: 1542386718
+      OpenGunnerHeroVer2_419: 1249939138
+      OpenGunnerHeroVer2_421: -801036104
+      OpenGunnerHeroVer2_422: 2016674693
+      OpenGunnerHeroVer2_423: 156057829
+      OpenGunnerHeroVer2_424: 1583045185
+      OpenGunnerHeroVer2_425: 987336697
+      OpenGunnerHeroVer2_426: 1706003227
+      OpenGunnerHeroVer2_427: 1814716636
+      OpenGunnerHeroVer2_428: 682496933
+      OpenGunnerHeroVer2_429: 744006625
+      OpenGunnerHeroVer2_430: -4574196
+      OpenGunnerHeroVer2_431: -1839148441
+      OpenGunnerHeroVer2_432: 752779302
+      OpenGunnerHeroVer2_433: 712940454
+      OpenGunnerHeroVer2_434: -1899718530
+      OpenGunnerHeroVer2_435: -1120241232
+      OpenGunnerHeroVer2_436: 1327465321
+      OpenGunnerHeroVer2_437: 1454213083
+      OpenGunnerHeroVer2_438: -1821681685
+      OpenGunnerHeroVer2_439: 1271935377
+      OpenGunnerHeroVer2_440: 1184182817
+      OpenGunnerHeroVer2_441: 489199336
+      OpenGunnerHeroVer2_442: -1384525050
+      OpenGunnerHeroVer2_443: -1669179463
+      OpenGunnerHeroVer2_444: 1597787682
+      OpenGunnerHeroVer2_445: 1825550440
+      OpenGunnerHeroVer2_446: 1022361241
+      OpenGunnerHeroVer2_447: 703835281
+      OpenGunnerHeroVer2_448: 2027264179
+      OpenGunnerHeroVer2_449: 356804510
+      OpenGunnerHeroVer2_450: 1539310769
+      OpenGunnerHeroVer2_451: 633189793
+      OpenGunnerHeroVer2_452: -15953043
+      OpenGunnerHeroVer2_453: -952668422
+      OpenGunnerHeroVer2_454: -842209866
+      OpenGunnerHeroVer2_455: 1430111023
+      OpenGunnerHeroVer2_456: -920700532
+      OpenGunnerHeroVer2_457: -1709297810
+      OpenGunnerHeroVer2_458: -718742343
+      OpenGunnerHeroVer2_459: -490874316
+      OpenGunnerHeroVer2_460: 344689525
+      OpenGunnerHeroVer2_461: 997103820
+      OpenGunnerHeroVer2_462: -676186275
+      OpenGunnerHeroVer2_463: -2018341900
+      OpenGunnerHeroVer2_464: -1751652473
+      OpenGunnerHeroVer2_465: -1159421361
+      OpenGunnerHeroVer2_466: -1264324082
+      OpenGunnerHeroVer2_467: -2029512567
+      OpenGunnerHeroVer2_468: 337216354
+      OpenGunnerHeroVer2_469: 1059356206
+      OpenGunnerHeroVer2_470: 1169282312
+      OpenGunnerHeroVer2_471: -1254210202
+      OpenGunnerHeroVer2_472: 1052625424
+      OpenGunnerHeroVer2_473: 506843493
+      OpenGunnerHeroVer2_474: 1333778800
+      OpenGunnerHeroVer2_475: -814431415
+      OpenGunnerHeroVer2_476: -29984474
+      OpenGunnerHeroVer2_477: -1178718817
+      OpenGunnerHeroVer2_478: 557479421
+      OpenGunnerHeroVer2_479: -1023315765
+      OpenGunnerHeroVer2_480: -1245952092
+      OpenGunnerHeroVer2_481: -1744722787
+      OpenGunnerHeroVer2_482: -962836877
+      OpenGunnerHeroVer2_483: -304884417
+      OpenGunnerHeroVer2_484: 40361992
+      OpenGunnerHeroVer2_485: 772743095
+      OpenGunnerHeroVer2_486: -810898872
+      OpenGunnerHeroVer2_487: -1856766831
+      OpenGunnerHeroVer2_488: -990150841
+      OpenGunnerHeroVer2_489: -1552023603
+      OpenGunnerHeroVer2_490: 1925823967
+      OpenGunnerHeroVer2_491: 906406486
+      OpenGunnerHeroVer2_492: 1791785078
+      OpenGunnerHeroVer2_493: 235958921
+      OpenGunnerHeroVer2_494: -268404361
+      OpenGunnerHeroVer2_495: 311142188
+      OpenGunnerHeroVer2_496: -194488954
+      OpenGunnerHeroVer2_497: -644839937
+      OpenGunnerHeroVer2_498: 759804352
+      OpenGunnerHeroVer2_499: -62929136
+      OpenGunnerHeroVer2_5: -276001550
+      OpenGunnerHeroVer2_52: 1453421592
+      OpenGunnerHeroVer2_54: 254607488
+      OpenGunnerHeroVer2_55: 566775759
+      OpenGunnerHeroVer2_56: -1884731546
+      OpenGunnerHeroVer2_57: 1167665054
+      OpenGunnerHeroVer2_58: 812097895
+      OpenGunnerHeroVer2_59: 2040947925
+      OpenGunnerHeroVer2_6: -223356075
+      OpenGunnerHeroVer2_61: -1635512946
+      OpenGunnerHeroVer2_63: -441135184
+      OpenGunnerHeroVer2_65: 1473915419
+      OpenGunnerHeroVer2_66: 730124962
+      OpenGunnerHeroVer2_67: 1126373266
+      OpenGunnerHeroVer2_68: -590177300
+      OpenGunnerHeroVer2_69: 189775813
+      OpenGunnerHeroVer2_7: -61150666
+      OpenGunnerHeroVer2_70: 846975204
+      OpenGunnerHeroVer2_71: 1719366818
+      OpenGunnerHeroVer2_72: -1834823486
+      OpenGunnerHeroVer2_73: -358474777
+      OpenGunnerHeroVer2_74: 89238277
+      OpenGunnerHeroVer2_75: -1916253283
+      OpenGunnerHeroVer2_76: -1489426283
+      OpenGunnerHeroVer2_77: 358947581
+      OpenGunnerHeroVer2_78: -599820133
+      OpenGunnerHeroVer2_79: 1111449301
+      OpenGunnerHeroVer2_8: 1165721210
+      OpenGunnerHeroVer2_83: -1949517200
+      OpenGunnerHeroVer2_85: -601030444
+      OpenGunnerHeroVer2_86: -1799213594
+      OpenGunnerHeroVer2_87: -1324847924
+      OpenGunnerHeroVer2_88: -714477650
+      OpenGunnerHeroVer2_89: 513300244
+      OpenGunnerHeroVer2_9: -2032470929
+      OpenGunnerHeroVer2_90: -1611056620
+      OpenGunnerHeroVer2_91: -462488117
+      OpenGunnerHeroVer2_92: -466873952
+      OpenGunnerHeroVer2_93: -740354241
+      OpenGunnerHeroVer2_94: 392187198
+      OpenGunnerHeroVer2_95: -85473258
+      OpenGunnerHeroVer2_96: -1634577873
+      OpenGunnerHeroVer2_97: 1681852734
+      OpenGunnerHeroVer2_98: 268417897
+      OpenGunnerHeroVer2_99: -578140353
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
