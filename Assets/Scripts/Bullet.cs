@@ -26,4 +26,14 @@ public class Bullet : MonoBehaviour
     {
         Destroy(gameObject);
     }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        if (other.TryGetComponent<Enemy>(out Enemy enemy))
+        {
+            enemy.TakeDamage(1);
+            Destroy(gameObject); // Bullet disappears on hit
+        }
+    }
+
 }

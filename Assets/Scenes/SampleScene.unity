@@ -3692,6 +3692,9 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
+  bulletPrefab: {fileID: 97325687671887532, guid: aa592d14b03ce0d4e83f0cf11b477b79, type: 3}
+  firePoint: {fileID: 173195376}
+  fireRate: 0.2
 --- !u!1 &504408280
 GameObject:
   m_ObjectHideFlags: 0
@@ -4022,6 +4025,56 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &659304686
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 659304688}
+  - component: {fileID: 659304687}
+  m_Layer: 0
+  m_Name: EnemySpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &659304687
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659304686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6547eb200e61ed140944a3fec29109f5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
+  enemyPrefab: {fileID: 3484423229872220938, guid: 0d8120a7feabdf0438a3fdca90c0cc47, type: 3}
+  spawnInterval: 4
+  spawnDistanceFromCamera: 12
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 256
+--- !u!4 &659304688
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 659304686}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 1.06361, y: 0.4876, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1137714566
 GameObject:
   m_ObjectHideFlags: 0
@@ -4138,3 +4191,4 @@ SceneRoots:
   - {fileID: 389064757}
   - {fileID: 504408282}
   - {fileID: 1137714569}
+  - {fileID: 659304688}
