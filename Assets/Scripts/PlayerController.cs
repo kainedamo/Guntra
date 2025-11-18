@@ -7,6 +7,12 @@ public class PlayerController : MonoBehaviour
     public Transform groundCheck; // Empty child at feet
     public LayerMask groundLayer; // "Ground" layer
 
+    [Header("Shooting")]
+    public GameObject bulletPrefab;
+    public Transform firePoint;         // Empty child at gun muzzle
+    public float fireRate = 0.2f;           // Feels like a machine gun
+    private float nextFireTime = 0f;
+
     private Rigidbody2D rb;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
@@ -42,6 +48,19 @@ public class PlayerController : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+        }
+
+     
+        {
+            // Shooting
+            if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
+            {
+                nextFireTime = Time.time + fireRate;
+                GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+                int facing = spriteRenderer.flipX ? -1 : 1;
+                bullet.GetComponent<Bullet>().Initialise(facing);
+            }
+
         }
 
         // Animations (Run only if not crouching)
