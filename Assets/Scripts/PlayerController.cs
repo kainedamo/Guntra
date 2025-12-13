@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f;  // Horizontal speed
+    public float moveSpeed = 5f; // Horizontal speed
     public float jumpForce = 10f; // Jump height
     public Transform groundCheck; // Empty child at feet
     public LayerMask groundLayer; // "Ground" layer
 
     [Header("Shooting")]
     public GameObject bulletPrefab;
-    public Transform firePoint;         // Empty child at gun muzzle
-    public float fireRate = 0.2f;           // Feels like a machine gun
+    public Transform firePoint; // Empty child at gun muzzle
+    public float fireRate = 0.2f; // Feels like a machine gun
     private float nextFireTime = 0f;
 
     private Rigidbody2D rb;
@@ -25,7 +25,7 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         animator.SetBool("IsRunning", false);
-        animator.SetBool("IsJumping", false);
+        animator.SetBool("IsJumping", false); // Airborne state
         animator.SetBool("IsCrouching", false);
     }
 
@@ -33,7 +33,6 @@ public class PlayerController : MonoBehaviour
     {
         // Crouch input (hold S)
         isCrouching = Input.GetKey(KeyCode.S);
-        Debug.Log("Crouching Input: " + isCrouching); // Temp: Confirm S press
 
         // Movement
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -43,29 +42,27 @@ public class PlayerController : MonoBehaviour
         if (horizontal > 0) spriteRenderer.flipX = false;
         else if (horizontal < 0) spriteRenderer.flipX = true;
 
-        // Jump
+        // Ground check
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
-        if (Input.GetKeyDown(KeyCode.Space) && isGrounded)
+
+        // Jump (Trigger + airborne bool)
+        if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !isCrouching)
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
 
-     
+        // Shooting
+        if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
         {
-            // Shooting
-            if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
-            {
-                nextFireTime = Time.time + fireRate;
-                GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
-                int facing = spriteRenderer.flipX ? -1 : 1;
-                bullet.GetComponent<Bullet>().Initialise(facing);
-            }
-
+            nextFireTime = Time.time + fireRate;
+            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+            int facing = spriteRenderer.flipX ? -1 : 1;
+            bullet.GetComponent<Bullet>().Initialise(facing);
         }
 
-        // Animations (Run only if not crouching)
+        // Animations
         animator.SetBool("IsRunning", Mathf.Abs(horizontal) > 0 && !isCrouching);
-        animator.SetBool("IsJumping", !isGrounded);
+        animator.SetBool("IsJumping", !isGrounded); // Stays true while airborne
         animator.SetBool("IsCrouching", isCrouching);
     }
 }

@@ -821,7 +821,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 73
-        y: 729
+        y: 728
         width: 50
         height: 50
       alignment: 0
@@ -843,7 +843,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 127
-        y: 730
+        y: 728
         width: 50
         height: 50
       alignment: 0
@@ -1040,7 +1040,7 @@ TextureImporter:
       name: Forest_Playground_BrownEarth_6
       rect:
         serializedVersion: 2
-        x: 126
+        x: 127
         y: 674
         width: 50
         height: 50
@@ -1150,8 +1150,8 @@ TextureImporter:
       name: Forest_Playground_BrownEarth_8
       rect:
         serializedVersion: 2
-        x: 74
-        y: 621
+        x: 73
+        y: 620
         width: 50
         height: 50
       alignment: 0
@@ -1173,7 +1173,7 @@ TextureImporter:
       rect:
         serializedVersion: 2
         x: 127
-        y: 622
+        y: 620
         width: 50
         height: 50
       alignment: 0

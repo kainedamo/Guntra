@@ -55,7 +55,22 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        // TODO: blood particles here
+        ParticleSystem deathEffect = GetComponentInChildren<ParticleSystem>();
+        if (deathEffect != null)
+        {
+            // Detach so it survives the parent being destroyed
+            deathEffect.transform.parent = null;
+
+            // Make sure it plays once and then dies on its own
+            deathEffect.Stop();
+            deathEffect.Clear();          // removes any stray particles
+            deathEffect.Play();
+
+            // Auto-destroy the particle system when it's finished
+            Destroy(deathEffect.gameObject, deathEffect.main.duration);
+        }
+
+        // Now safe to destroy the enemy immediately
         Destroy(gameObject);
     }
 
