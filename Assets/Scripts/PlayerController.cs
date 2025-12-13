@@ -31,8 +31,13 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        // Crouch input (hold S)
-        isCrouching = Input.GetKey(KeyCode.S);
+        // Crouch toggle (press S once to crouch, press again to stand)
+        if (Input.GetKeyDown(KeyCode.S))
+        {
+            isCrouching = !isCrouching;
+            animator.SetBool("IsCrouching", isCrouching);
+            Debug.Log("Crouch toggled to: " + isCrouching);
+        }
 
         // Movement
         float horizontal = Input.GetAxisRaw("Horizontal");
@@ -51,11 +56,21 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
 
-        // Shooting
+        // Shooting 
         if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
         {
             nextFireTime = Time.time + fireRate;
-            GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
+
+            Vector3 spawnPos = firePoint.localPosition;
+            spawnPos.x *= spriteRenderer.flipX ? -1f : 1f;
+
+            // Crouch shooting level with gun muzzle
+            float muzzleY = isCrouching ? 0.002f : 0.12f; // Crouch low, stand high
+            spawnPos.y = muzzleY;
+
+            spawnPos = transform.TransformPoint(spawnPos);
+
+            GameObject bullet = Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
             int facing = spriteRenderer.flipX ? -1 : 1;
             bullet.GetComponent<Bullet>().Initialise(facing);
         }
