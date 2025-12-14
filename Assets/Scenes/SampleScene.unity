@@ -3844,7 +3844,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1.14}
+    oldSize: {x: 1, y: 1}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -3924,10 +3924,10 @@ MonoBehaviour:
   fireRate: 0.2
   muzzleStand: {x: 0.6, y: 0.12}
   muzzleCrouch: {x: 0.6, y: 0.002}
-  muzzleUp: {x: 0.00005, y: 0.4}
-  muzzleDown: {x: -0.1, y: -0.5}
-  muzzleUpDiag: {x: 0.6, y: 0.4}
-  muzzleDownDiag: {x: 0.3, y: -0.4}
+  muzzleUp: {x: -0.1, y: 0.7}
+  muzzleDown: {x: -0.13, y: -0.45}
+  muzzleUpDiag: {x: 0.4, y: 0.6}
+  muzzleDownDiag: {x: 0.24, y: -0.16}
 --- !u!114 &389064763
 MonoBehaviour:
   m_ObjectHideFlags: 0

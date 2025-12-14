@@ -122,7 +122,7 @@ public class PlayerController : MonoBehaviour
                 case AimDirection.Up: bulletDir = Vector2.up; break;
                 case AimDirection.Down: bulletDir = Vector2.down; break;
                 case AimDirection.UpDiag: bulletDir = new Vector2(0.7f, 0.7f).normalized; break;
-                case AimDirection.DownDiag: bulletDir = new Vector2(0.7f, -0.7f).normalized; break;
+                case AimDirection.DownDiag: bulletDir = new Vector2(0.8f, -0.6f).normalized; break;
             }
             if (spriteRenderer.flipX) bulletDir.x *= -1f; // Mirror for left
 
@@ -135,6 +135,7 @@ public class PlayerController : MonoBehaviour
         animator.SetBool("IsRunning", Mathf.Abs(horizontal) > 0 && !isCrouching);
         animator.SetBool("IsJumping", !isGrounded);
         animator.SetBool("IsCrouching", isCrouching);
+        animator.SetLayerWeight(1, !isGrounded ? 1f : 0f); // Layer 1 = JumpPriority, full weight mid-air
     }
 
     void FixedUpdate()
