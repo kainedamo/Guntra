@@ -14,10 +14,9 @@ public class Bullet : MonoBehaviour
     }
 
     // Called by PlayerController when spawning
-    public void Initialise(int facingDirection)
+    public void Initialise(Vector2 direction)
     {
-        direction = facingDirection;
-        rb.linearVelocity = new Vector2(speed * direction, 0f);
+        rb.linearVelocity = direction * speed;
         Destroy(gameObject, lifetime);
     }
 
