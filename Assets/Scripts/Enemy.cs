@@ -1,40 +1,61 @@
 using UnityEngine;
+using System.Collections; // For IEnumerator
 
 public class Enemy : MonoBehaviour
 {
     public float moveSpeed = 1.5f;
     public int maxHealth = 3;
-    public float edgeCheckDistance = 0.6f;   // How far ahead to check for ground
-    public LayerMask groundLayer;            // Assign "Ground" in Inspector
+    public float edgeCheckDistance = 0.6f;
+    public LayerMask groundLayer;
+
+    [Header("Shooting")]
+    public GameObject enemyBulletPrefab;
+    public Transform enemyFirePoint;
+    public float enemyFireRate = 2.5f;
+    private float nextEnemyFireTime;
 
     private int currentHealth;
     private Rigidbody2D rb;
     private SpriteRenderer sr;
-    private int direction = -1;              // -1 = left, 1 = right
+    private int direction = -1;
+    private Transform player;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         sr = GetComponent<SpriteRenderer>();
         currentHealth = maxHealth;
+        player = GameObject.FindGameObjectWithTag("Player")?.transform;
     }
 
-    void FixedUpdate()   // Use FixedUpdate for physics movement
+    void FixedUpdate()
     {
-        // Check for edge
+        // Edge detection
         Vector2 edgeCheckPos = (Vector2)transform.position + new Vector2(direction * 0.55f, -0.6f);
         bool groundAhead = Physics2D.Raycast(edgeCheckPos, Vector2.down, edgeCheckDistance, groundLayer);
 
         if (!groundAhead)
         {
-            direction *= -1;   // Turn around!
+            direction *= -1;
         }
 
-        // Move
-        rb.linearVelocity = new Vector2(direction * moveSpeed, rb.linearVelocity.y);
+        // Movement
+        rb.linearVelocity = new Vector2(direction * moveSpeed, 0f); // Clamp Y to 0
 
-        // Flip sprite to face movement direction
-        sr.flipX = direction > 0;   // true = facing right
+        // Flip
+        sr.flipX = direction > 0;
+
+        // Enemy shooting
+        if (Time.time >= nextEnemyFireTime && player != null)
+        {
+            nextEnemyFireTime = Time.time + enemyFireRate;
+
+            Vector2 dirToPlayer = (player.position - transform.position).normalized;
+            Vector3 spawnPos = enemyFirePoint.position;
+
+            GameObject bullet = Instantiate(enemyBulletPrefab, spawnPos, Quaternion.identity);
+            bullet.GetComponent<EnemyBullet>().Initialise(dirToPlayer);
+        }
     }
 
     public void TakeDamage(int damage = 1)
@@ -43,10 +64,12 @@ public class Enemy : MonoBehaviour
         StartCoroutine(FlashRed());
 
         if (currentHealth <= 0)
+        {
             Die();
+        }
     }
 
-    private System.Collections.IEnumerator FlashRed()
+    private IEnumerator FlashRed()
     {
         sr.color = Color.red;
         yield return new WaitForSeconds(0.1f);
@@ -58,19 +81,12 @@ public class Enemy : MonoBehaviour
         ParticleSystem deathEffect = GetComponentInChildren<ParticleSystem>();
         if (deathEffect != null)
         {
-            // Detach so it survives the parent being destroyed
             deathEffect.transform.parent = null;
-
-            // Make sure it plays once and then dies on its own
             deathEffect.Stop();
-            deathEffect.Clear();          // removes any stray particles
+            deathEffect.Clear();
             deathEffect.Play();
-
-            // Auto-destroy the particle system when it's finished
             Destroy(deathEffect.gameObject, deathEffect.main.duration);
         }
-
-        // Now safe to destroy the enemy immediately
         Destroy(gameObject);
     }
 
@@ -79,7 +95,6 @@ public class Enemy : MonoBehaviour
         Destroy(gameObject);
     }
 
-    // Optional: visualise the edge check ray in Scene view
     void OnDrawGizmosSelected()
     {
         if (groundLayer == 0) return;
