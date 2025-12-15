@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class EnemyBullet : MonoBehaviour
 {
-    public float speed = 8f;
+    public float speed = 12f; // Higher for consistency — tweak prefab
     public float lifetime = 3f;
 
     private Rigidbody2D rb;
@@ -14,22 +14,28 @@ public class EnemyBullet : MonoBehaviour
 
     public void Initialise(Vector2 direction)
     {
+        rb.WakeUp(); // Ensure physics active
         rb.linearVelocity = direction.normalized * speed;
         Destroy(gameObject, lifetime);
     }
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        // Damage player
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(1);
+            Destroy(gameObject);
         }
 
-        // Destroy on ground/wall hit
         if (collision.gameObject.CompareTag("Ground") || collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
         {
             Destroy(gameObject);
+        }
+
+        if (collision.gameObject.CompareTag("Enemy"))
+        {
+            // Optionally ignore collision with enemies
+            Physics2D.IgnoreCollision(collision.collider, GetComponent<Collider2D>());
         }
     }
 
