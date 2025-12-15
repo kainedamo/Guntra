@@ -2,32 +2,33 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float moveSpeed = 5f; // Horizontal speed
-    public float jumpForce = 10f; // Jump height
-    public Transform groundCheck; // Empty child at feet
-    public LayerMask groundLayer; // "Ground" layer
+    public float moveSpeed = 5f;
+    public float jumpForce = 10f;
+    public Transform groundCheck;
+    public LayerMask groundLayer;
 
     [Header("Shooting")]
     public GameObject bulletPrefab;
-    public Transform firePoint; // Empty child at gun muzzle
-    public float fireRate = 0.2f; // Feels like a machine gun
+    public Transform firePoint;
+    public float fireRate = 0.2f;
     private float nextFireTime = 0f;
 
     [Header("Aim Muzzle Offsets")]
-    public Vector2 muzzleStand = new Vector2(0.6f, 0.12f);     // Forward/Idle
-    public Vector2 muzzleCrouch = new Vector2(0.6f, 0.002f);   // Crouch forward
-    public Vector2 muzzleUp = new Vector2(0.45f, 0.35f);      // Gun up
-    public Vector2 muzzleDown = new Vector2(0.55f, -0.15f);   // Gun down
-    public Vector2 muzzleUpDiag = new Vector2(0.55f, 0.25f);   // Up-right diag
-    public Vector2 muzzleDownDiag = new Vector2(0.6f, -0.05f); // Down-right diag
-    public Vector2 muzzleCrawl = new Vector2(0.08f, -0.12f); //Crawl forward
+    public Vector2 muzzleStand = new Vector2(0.6f, 0.12f);
+    public Vector2 muzzleCrouch = new Vector2(0.6f, 0.002f);
+    public Vector2 muzzleUp = new Vector2(0.45f, 0.35f);
+    public Vector2 muzzleDown = new Vector2(0.55f, -0.15f);
+    public Vector2 muzzleUpDiag = new Vector2(0.55f, 0.25f);
+    public Vector2 muzzleDownDiag = new Vector2(0.6f, -0.05f);
+    public Vector2 muzzleCrawl = new Vector2(0.08f, -0.12f);
 
-    private PlayerHealth health; // Self-reference
+    private PlayerHealth health;
     private Rigidbody2D rb;
     private Animator animator;
     private SpriteRenderer spriteRenderer;
     private bool isGrounded;
     private bool isCrouching;
+
     private enum AimDirection { Forward, Up, Down, UpDiag, DownDiag }
     private AimDirection currentAimDir = AimDirection.Forward;
 
@@ -36,7 +37,7 @@ public class PlayerController : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
-        health = GetComponent<PlayerHealth>(); // Auto-grab
+        health = GetComponent<PlayerHealth>();
         animator.SetBool("IsRunning", false);
         animator.SetBool("IsJumping", false);
         animator.SetBool("IsCrouching", false);
@@ -68,33 +69,32 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
 
-        // Mouse aim preview (standing poses — Trigger on MouseDown only)
+        // Mouse aim
+        Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+        mousePos.z = 0;
+        float mouseYRelative = mousePos.y - transform.position.y;
+        float mouseXRelative = mousePos.x - transform.position.x;
+
+        if (mouseYRelative > 0.5f)
+        {
+            currentAimDir = Mathf.Abs(mouseXRelative) > 1f ? AimDirection.UpDiag : AimDirection.Up;
+        }
+        else if (mouseYRelative < -0.5f)
+        {
+            currentAimDir = Mathf.Abs(mouseXRelative) > 1f ? AimDirection.DownDiag : AimDirection.Down;
+        }
+        else
+        {
+            currentAimDir = AimDirection.Forward;
+        }
+
+        // Standing aim — trigger on first click only
         if (Input.GetMouseButtonDown(0))
         {
-            Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-            mousePos.z = 0;
-            float mouseYRelative = mousePos.y - transform.position.y;
-            float mouseXRelative = mousePos.x - transform.position.x;
-
-            if (mouseYRelative > 0.5f)
-            {
-                if (Mathf.Abs(mouseXRelative) > 1f) currentAimDir = AimDirection.UpDiag;
-                else currentAimDir = AimDirection.Up;
-            }
-            else if (mouseYRelative < -0.5f)
-            {
-                if (Mathf.Abs(mouseXRelative) > 1f) currentAimDir = AimDirection.DownDiag;
-                else currentAimDir = AimDirection.Down;
-            }
-            else
-            {
-                currentAimDir = AimDirection.Forward;
-            }
-
             animator.SetTrigger("Shoot" + currentAimDir);
         }
 
-        // Running aim Bools (loop while running + aim)
+        // Running aim Bools (looping)
         float horizontal = Input.GetAxisRaw("Horizontal");
         animator.SetBool("IsRunUpDiag", Mathf.Abs(horizontal) > 0 && currentAimDir == AimDirection.UpDiag);
         animator.SetBool("IsRunDownDiag", Mathf.Abs(horizontal) > 0 && currentAimDir == AimDirection.DownDiag);
@@ -102,26 +102,25 @@ public class PlayerController : MonoBehaviour
         // Crawl Bool
         animator.SetBool("IsCrawl", isCrouching && Mathf.Abs(horizontal) > 0);
 
-        // Layer weights (RunAim always active)
-        animator.SetLayerWeight(1, 1f); // RunAim layer index 1
+        // RunAim active only when running + diag aim
+        bool runAimActive = animator.GetBool("IsRunUpDiag") || animator.GetBool("IsRunDownDiag");
+        animator.SetLayerWeight(1, runAimActive ? 1f : 0f); // RunAim index 1
 
-        // Shooting
-        if (Input.GetMouseButton(0) && Time.time >= nextFireTime)
+        // Crawl active only when crouch + moving
+        animator.SetLayerWeight(2, animator.GetBool("IsCrawl") ? 1f : 0f); // Crawl index 2
+
+        // JumpPriority highest priority mid-air
+        animator.SetLayerWeight(3, !isGrounded ? 3f : 0f); // JumpPriority index 3
+
+        // Shooting — single shot on LMB tap
+        if (Input.GetMouseButtonDown(0) && Time.time >= nextFireTime)
         {
-            nextFireTime = Time.time + fireRate;
+            nextFireTime = Time.time + fireRate; // Cooldown for rapid taps
 
-            // Muzzle offset per aim state
             Vector2 selectedMuzzle = muzzleStand;
             if (isCrouching)
             {
-                if (animator.GetBool("IsCrawl"))
-                {
-                    selectedMuzzle = muzzleCrawl;
-                }
-                else
-                {
-                    selectedMuzzle = muzzleCrouch;
-                }
+                selectedMuzzle = animator.GetBool("IsCrawl") ? muzzleCrawl : muzzleCrouch;
             }
             else
             {
@@ -138,8 +137,7 @@ public class PlayerController : MonoBehaviour
             spawnPos.x *= spriteRenderer.flipX ? -1f : 1f;
             spawnPos = transform.TransformPoint(spawnPos);
 
-            // Bullet direction matching aim
-            Vector2 bulletDir = Vector2.right; // Default forward
+            Vector2 bulletDir = Vector2.right;
             switch (currentAimDir)
             {
                 case AimDirection.Up: bulletDir = Vector2.up; break;
@@ -154,18 +152,14 @@ public class PlayerController : MonoBehaviour
         }
 
         // Animations
-        float animHorizontal = Input.GetAxisRaw("Horizontal"); // Renamed to avoid duplicate
-        animator.SetBool("IsRunning", Mathf.Abs(animHorizontal) > 0 && !isCrouching);
+        animator.SetBool("IsRunning", Mathf.Abs(horizontal) > 0 && !isCrouching);
         animator.SetBool("IsJumping", !isGrounded);
-        animator.SetBool("IsCrouching", isCrouching);
-        animator.SetLayerWeight(1, !isGrounded ? 1f : 0f); // JumpPriority layer
     }
 
     void FixedUpdate()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         rb.linearVelocity = new Vector2(horizontal * moveSpeed, rb.linearVelocity.y);
-
         if (horizontal > 0) spriteRenderer.flipX = false;
         else if (horizontal < 0) spriteRenderer.flipX = true;
     }

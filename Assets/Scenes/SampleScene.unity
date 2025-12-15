@@ -3927,7 +3927,7 @@ MonoBehaviour:
   muzzleUp: {x: -0.1, y: 0.7}
   muzzleDown: {x: -0.13, y: -0.45}
   muzzleUpDiag: {x: 0.4, y: 0.6}
-  muzzleDownDiag: {x: 0.24, y: -0.14}
+  muzzleDownDiag: {x: 0.32, y: -0.22}
   muzzleCrawl: {x: 0.6, y: -0.36}
 --- !u!114 &389064763
 MonoBehaviour:
