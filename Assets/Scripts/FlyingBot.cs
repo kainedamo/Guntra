@@ -1,10 +1,15 @@
 using UnityEngine;
+using System.Collections;
 
 public class FlyingBot : MonoBehaviour
 {
     public float swoopSpeed = 3f;
-    public float arcHeight = 2f; // Swoop arc peak
-    public float pauseTime = 1f; // Hover at top before swoop
+    public int maxHealth = 3;
+    public float arcHeight = 2f;
+    public float pauseTime = 1f;
+    [Header("Pickups")]
+    public GameObject healthPickupPrefab;
+    public float pickupDropChance = 0.25f;
 
     private Transform player;
     private Vector3 startPos;
@@ -12,12 +17,16 @@ public class FlyingBot : MonoBehaviour
     private float swoopProgress = 0f;
     private bool swooping = false;
     private float pauseTimer = 0f;
+    private int currentHealth;
+    private SpriteRenderer sr;
 
     void Awake()
     {
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
         startPos = transform.position;
-        targetPos = new Vector3(player.position.x - 3f, -2f, 0); // Swoop below player
+        targetPos = new Vector3(player ? player.position.x - 3f : 0, -2f, 0);
+        currentHealth = maxHealth;
+        sr = GetComponent<SpriteRenderer>(); // For FlashRed
     }
 
     void Update()
@@ -31,14 +40,13 @@ public class FlyingBot : MonoBehaviour
             {
                 swooping = true;
                 swoopProgress = 0f;
-                targetPos.x = player.position.x + Random.Range(-2f, 2f); // Random X for next swoop
+                targetPos.x = player.position.x + Random.Range(-2f, 2f);
             }
         }
         else
         {
-            // Arcing swoop: sin wave Y for curve
             swoopProgress += swoopSpeed * Time.deltaTime;
-            float sinCurve = Mathf.Sin(swoopProgress * Mathf.PI); // 0 to 1 to 0
+            float sinCurve = Mathf.Sin(swoopProgress * Mathf.PI);
             Vector3 currentPos = Vector3.Lerp(startPos, targetPos, swoopProgress);
             currentPos.y += sinCurve * arcHeight;
             transform.position = currentPos;
@@ -47,8 +55,35 @@ public class FlyingBot : MonoBehaviour
             {
                 swooping = false;
                 pauseTimer = 0f;
-                startPos = transform.position; // Ready for next swoop
+                startPos = transform.position;
             }
+        }
+    }
+
+    public void TakeDamage(int damage = 1)
+    {
+        currentHealth -= damage;
+        StartCoroutine(FlashRed());
+
+        if (currentHealth <= 0)
+        {
+            Die();
+        }
+    }
+
+    private IEnumerator FlashRed()
+    {
+        sr.color = Color.red;
+        yield return new WaitForSeconds(0.1f);
+        sr.color = Color.white;
+    }
+
+    void OnTriggerEnter2D(Collider2D other)
+    {
+        // Bullet damage
+        if (other.CompareTag("Bullet"))
+        {
+            TakeDamage(1);
         }
     }
 
@@ -57,8 +92,36 @@ public class FlyingBot : MonoBehaviour
         if (collision.gameObject.CompareTag("Player"))
         {
             collision.gameObject.GetComponent<PlayerHealth>().TakeDamage(1);
-            Destroy(gameObject);
+            Die(); // Plays DeathEffect + score/pickup before destroy
         }
+    }
+
+    void Die()
+    {
+        // Health pickup drop
+        if (healthPickupPrefab != null && Random.value < pickupDropChance)
+        {
+            Instantiate(healthPickupPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+        }
+
+        // Death effect
+        ParticleSystem deathEffect = GetComponentInChildren<ParticleSystem>();
+        if (deathEffect != null)
+        {
+            deathEffect.transform.parent = null;
+            deathEffect.Stop();
+            deathEffect.Clear();
+            deathEffect.Play();
+            Destroy(deathEffect.gameObject, deathEffect.main.duration);
+        }
+
+        // Score
+        if (ScoreManager.instance != null)
+        {
+            ScoreManager.instance.AddScore(100);
+        }
+
+        Destroy(gameObject);
     }
 
     void OnBecameInvisible()

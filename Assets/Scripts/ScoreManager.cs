@@ -1,10 +1,10 @@
 using UnityEngine;
-using TMPro; // Add this
+using TMPro;
 using UnityEngine.SceneManagement;
 
 public class ScoreManager : MonoBehaviour
 {
-    public TMP_Text scoreText; // Changed to TMP_Text
+    public TMP_Text scoreText; // Drag ScoreText
     public int score = 0;
 
     public static ScoreManager instance;
@@ -19,12 +19,23 @@ public class ScoreManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
+            return;
         }
     }
 
     public void AddScore(int amount)
     {
-        score += amount;
-        scoreText.text = "Score: " + score;
+        if (instance == null) return; // Null-safe
+
+        instance.score += amount;
+        if (instance.scoreText != null)
+        {
+            instance.scoreText.text = "Score: " + instance.score;
+        }
+    }
+
+    void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("HighScore", score);
     }
 }

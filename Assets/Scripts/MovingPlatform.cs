@@ -7,6 +7,11 @@ public class MovingPlatform : MonoBehaviour
     public float moveSpeed = 2f;
     private Vector3 nextPosition;
 
+    private Transform playerToParent = null;
+    private Transform playerToUnparent = null;
+    private bool shouldParent = false;
+    private bool shouldUnparent = false;
+
     void Start()
     {
         nextPosition = pointB.position;
@@ -15,28 +20,45 @@ public class MovingPlatform : MonoBehaviour
     void Update()
     {
         transform.position = Vector3.MoveTowards(transform.position, nextPosition, moveSpeed * Time.deltaTime);
-
         if (Vector3.Distance(transform.position, nextPosition) < 0.01f)
         {
             nextPosition = (nextPosition == pointA.position) ? pointB.position : pointA.position;
         }
     }
 
-    // Make the player a child of the platform when they collide, so they move together
+    void LateUpdate()
+    {
+        // Handle parenting at the end of the frame
+        if (shouldParent && playerToParent != null)
+        {
+            playerToParent.parent = transform;
+            shouldParent = false;
+            playerToParent = null;
+        }
+
+        if (shouldUnparent && playerToUnparent != null)
+        {
+            playerToUnparent.parent = null;
+            shouldUnparent = false;
+            playerToUnparent = null;
+        }
+    }
+
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.transform.parent = transform;
+            playerToParent = collision.gameObject.transform;
+            shouldParent = true;
         }
     }
 
-    
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            collision.gameObject.transform.parent = null;
+            playerToUnparent = collision.gameObject.transform;
+            shouldUnparent = true;
         }
     }
 }

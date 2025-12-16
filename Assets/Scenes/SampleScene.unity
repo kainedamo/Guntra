@@ -4953,12 +4953,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6547eb200e61ed140944a3fec29109f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemySpawner
-  enemyPrefab: {fileID: 3484423229872220938, guid: 0d8120a7feabdf0438a3fdca90c0cc47, type: 3}
-  spawnInterval: 4
+  spawnInterval: 3
   spawnDistanceFromCamera: 12
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
+  enemyMechPrefab: {fileID: 3484423229872220938, guid: 0d8120a7feabdf0438a3fdca90c0cc47, type: 3}
+  flyingBotPrefab: {fileID: 2550677078982125092, guid: 6abd451718d7bea4fadc822190d3c229, type: 3}
+  flyingBotChance: 5
 --- !u!4 &659304688
 Transform:
   m_ObjectHideFlags: 0
@@ -5038,7 +5040,7 @@ PlatformEffector2D:
     m_Bits: 4294967295
   m_RotationalOffset: 0
   m_UseOneWay: 1
-  m_UseOneWayGrouping: 0
+  m_UseOneWayGrouping: 1
   m_SurfaceArc: 180
   m_UseSideFriction: 0
   m_UseSideBounce: 0
@@ -5074,7 +5076,7 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
@@ -6068,11 +6070,11 @@ SceneRoots:
   - {fileID: 838404419}
   - {fileID: 2070763810}
   - {fileID: 2081509163}
+  - {fileID: 1694933277}
+  - {fileID: 1913552510}
+  - {fileID: 2068571390}
   - {fileID: 500488197}
   - {fileID: 1541357802}
   - {fileID: 953386613}
   - {fileID: 1343852480}
-  - {fileID: 1694933277}
-  - {fileID: 1913552510}
-  - {fileID: 2068571390}
   - {fileID: 1776639146}
