@@ -52,4 +52,11 @@ public class PlayerHealth : MonoBehaviour
         // Restart scene (or Game Over screen later)
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
+
+    public void RestoreHealth(int amount = 1)
+    {
+        currentHealth += amount;
+        currentHealth = Mathf.Min(maxHealth, currentHealth); // Clamp to max
+        UpdateHeartsUI();
+    }
 }

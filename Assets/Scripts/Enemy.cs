@@ -20,6 +20,10 @@ public class Enemy : MonoBehaviour
     private int direction = -1;
     private Transform player;
 
+    [Header("Pickups")]
+    public GameObject healthPickupPrefab; // Drag HealthPickup prefab
+    public float pickupDropChance = 0.25f; // 25% chance
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -78,6 +82,13 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
+        // Spawn health pickup (25% chance)
+        if (healthPickupPrefab != null && Random.value < pickupDropChance)
+        {
+            Instantiate(healthPickupPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
+        }
+
+        // Death effect
         ParticleSystem deathEffect = GetComponentInChildren<ParticleSystem>();
         if (deathEffect != null)
         {
