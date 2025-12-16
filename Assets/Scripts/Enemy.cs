@@ -47,7 +47,7 @@ public class Enemy : MonoBehaviour
         rb.linearVelocity = new Vector2(direction * moveSpeed, 0f); // Clamp Y to 0
 
         // Flip
-        sr.flipX = direction > 0;
+        sr.flipX = direction < 0;
 
         // Enemy shooting
         if (Time.time >= nextEnemyFireTime && player != null)
