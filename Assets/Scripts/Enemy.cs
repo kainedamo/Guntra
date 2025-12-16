@@ -99,6 +99,9 @@ public class Enemy : MonoBehaviour
             Destroy(deathEffect.gameObject, deathEffect.main.duration);
         }
         Destroy(gameObject);
+
+        // Add score
+        ScoreManager.instance.AddScore(100);
     }
 
     void OnDrawGizmosSelected()

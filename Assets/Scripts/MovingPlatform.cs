@@ -22,7 +22,7 @@ public class MovingPlatform : MonoBehaviour
         }
     }
 
-    // Changed from OnTriggerEnter2D to OnCollisionEnter2D
+    // Make the player a child of the platform when they collide, so they move together
     private void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -31,7 +31,7 @@ public class MovingPlatform : MonoBehaviour
         }
     }
 
-    // Changed from OnTriggerExit2D to OnCollisionExit2D
+    
     private void OnCollisionExit2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
