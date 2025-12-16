@@ -51,6 +51,14 @@ public class PlayerHealth : MonoBehaviour
     {
         // Restart scene (or Game Over screen later)
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+
+        PlayerController playerController = FindObjectOfType<PlayerController>();
+        if (playerController != null)
+        {
+            playerController.DeactivateSpreadShot();
+        }
+
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
     }
 
     public void RestoreHealth(int amount = 1)

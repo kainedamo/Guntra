@@ -22,6 +22,12 @@ public class PlayerController : MonoBehaviour
     public Vector2 muzzleDownDiag = new Vector2(0.6f, -0.05f);
     public Vector2 muzzleCrawl = new Vector2(0.08f, -0.12f);
 
+    [Header("Spread Shot")]
+    public float spreadShotFireRate = 0.15f;
+    public GameObject spreadIconUI; // Drag SpreadIconUI GameObject
+
+    private bool isSpreadShotActive = false;
+
     private PlayerHealth health;
     private Rigidbody2D rb;
     private Animator animator;
@@ -38,9 +44,15 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         health = GetComponent<PlayerHealth>();
+
         animator.SetBool("IsRunning", false);
         animator.SetBool("IsJumping", false);
         animator.SetBool("IsCrouching", false);
+
+        if (spreadIconUI != null)
+        {
+            spreadIconUI.SetActive(false);
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -69,7 +81,7 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
 
-        // Mouse aim
+        // Mouse aim preview
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
         float mouseYRelative = mousePos.y - transform.position.y;
@@ -88,13 +100,13 @@ public class PlayerController : MonoBehaviour
             currentAimDir = AimDirection.Forward;
         }
 
-        // Standing aim — trigger on first click only
+        // Standing aim trigger
         if (Input.GetMouseButtonDown(0))
         {
             animator.SetTrigger("Shoot" + currentAimDir);
         }
 
-        // Running aim Bools (looping)
+        // Running aim Bools
         float horizontal = Input.GetAxisRaw("Horizontal");
         animator.SetBool("IsRunUpDiag", Mathf.Abs(horizontal) > 0 && currentAimDir == AimDirection.UpDiag);
         animator.SetBool("IsRunDownDiag", Mathf.Abs(horizontal) > 0 && currentAimDir == AimDirection.DownDiag);
@@ -102,20 +114,14 @@ public class PlayerController : MonoBehaviour
         // Crawl Bool
         animator.SetBool("IsCrawl", isCrouching && Mathf.Abs(horizontal) > 0);
 
-        // RunAim active only when running + diag aim
+        // RunAim layer weight
         bool runAimActive = animator.GetBool("IsRunUpDiag") || animator.GetBool("IsRunDownDiag");
-        animator.SetLayerWeight(1, runAimActive ? 1f : 0f); // RunAim index 1
+        animator.SetLayerWeight(1, runAimActive ? 1f : 0f);
 
-        // Crawl active only when crouch + moving
-        animator.SetLayerWeight(2, animator.GetBool("IsCrawl") ? 1f : 0f); // Crawl index 2
-
-        // JumpPriority highest priority mid-air
-        animator.SetLayerWeight(3, !isGrounded ? 3f : 0f); // JumpPriority index 3
-
-        // Shooting — single shot on LMB tap
+        // Shooting
         if (Input.GetMouseButtonDown(0) && Time.time >= nextFireTime)
         {
-            nextFireTime = Time.time + fireRate; // Cooldown for rapid taps
+            nextFireTime = Time.time + (isSpreadShotActive ? spreadShotFireRate : fireRate);
 
             Vector2 selectedMuzzle = muzzleStand;
             if (isCrouching)
@@ -147,8 +153,21 @@ public class PlayerController : MonoBehaviour
             }
             if (spriteRenderer.flipX) bulletDir.x *= -1f;
 
-            GameObject bullet = Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
-            bullet.GetComponent<Bullet>().Initialise(bulletDir);
+            if (isSpreadShotActive)
+            {
+                float[] angles = { -15f, 0f, 15f };
+                foreach (float angle in angles)
+                {
+                    Vector2 dir = Quaternion.Euler(0, 0, angle) * bulletDir;
+                    GameObject bullet = Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
+                    bullet.GetComponent<Bullet>().Initialise(dir);
+                }
+            }
+            else
+            {
+                GameObject bullet = Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
+                bullet.GetComponent<Bullet>().Initialise(bulletDir);
+            }
         }
 
         // Animations
@@ -160,7 +179,28 @@ public class PlayerController : MonoBehaviour
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
         rb.linearVelocity = new Vector2(horizontal * moveSpeed, rb.linearVelocity.y);
+
         if (horizontal > 0) spriteRenderer.flipX = false;
         else if (horizontal < 0) spriteRenderer.flipX = true;
+    }
+
+    // Called by pickup
+    public void ActivateSpreadShot()
+    {
+        isSpreadShotActive = true;
+        if (spreadIconUI != null)
+        {
+            spreadIconUI.SetActive(true);
+        }
+    }
+
+    // Called by PlayerHealth on death
+    public void DeactivateSpreadShot()
+    {
+        isSpreadShotActive = false;
+        if (spreadIconUI != null)
+        {
+            spreadIconUI.SetActive(false);
+        }
     }
 }
