@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
     public Image[] hearts; // Drag 3 heart Images in Inspector (array size 3)
     public Sprite fullHeart; // Your heart sprite
     public Sprite emptyHeart; // Duplicate heart, color gray (#666666) in Photoshop or tint in code
+    public bool isImmortal = false; // Check this in Inspector for testing
 
     private int currentHealth;
 
@@ -19,6 +20,8 @@ public class PlayerHealth : MonoBehaviour
 
     public void TakeDamage(int damage = 1)
     {
+        if (isImmortal) return; // Skip damage if immortal
+
         currentHealth -= damage;
         currentHealth = Mathf.Max(0, currentHealth); // Clamp to 0
 

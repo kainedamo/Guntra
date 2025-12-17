@@ -2,11 +2,9 @@ using UnityEngine;
 
 public class Bullet : MonoBehaviour
 {
-    public float speed = 12f;           // Tweak in prefab
-    public float lifetime = 2f;          // Auto-destroy after 2 seconds (safe off-screen)
-
+    public float speed = 12f; // Tweak in prefab
+    public float lifetime = 2f; // Auto-destroy after 2 seconds (safe off-screen)
     private Rigidbody2D rb;
-    private int direction = 1;           // 1 = right, -1 = left (set by player)
 
     void Awake()
     {
@@ -28,11 +26,17 @@ public class Bullet : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D other)
     {
+        // Hit regular enemy (mechs, bots)
         if (other.TryGetComponent<Enemy>(out Enemy enemy))
         {
             enemy.TakeDamage(1);
             Destroy(gameObject); // Bullet disappears on hit
         }
+        // Hit boss
+        else if (other.TryGetComponent<EnemyBoss>(out EnemyBoss boss))
+        {
+            boss.TakeDamage(1);
+            Destroy(gameObject);
+        }
     }
-
 }

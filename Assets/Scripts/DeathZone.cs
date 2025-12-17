@@ -13,7 +13,7 @@ public class DeathZone : MonoBehaviour
                 SceneManager.LoadScene(SceneManager.GetActiveScene().name);
             }
 
-            // Destroy enemy (no restart needed)
+            // Destroy enemy 
             if (other.CompareTag("Enemy"))
             {
                 Destroy(other.gameObject);

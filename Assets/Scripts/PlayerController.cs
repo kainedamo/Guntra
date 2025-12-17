@@ -6,13 +6,11 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 10f;
     public Transform groundCheck;
     public LayerMask groundLayer;
-
     [Header("Shooting")]
     public GameObject bulletPrefab;
     public Transform firePoint;
     public float fireRate = 0.2f;
     private float nextFireTime = 0f;
-
     [Header("Aim Muzzle Offsets")]
     public Vector2 muzzleStand = new Vector2(0.6f, 0.12f);
     public Vector2 muzzleCrouch = new Vector2(0.6f, 0.002f);
@@ -21,13 +19,14 @@ public class PlayerController : MonoBehaviour
     public Vector2 muzzleUpDiag = new Vector2(0.55f, 0.25f);
     public Vector2 muzzleDownDiag = new Vector2(0.6f, -0.05f);
     public Vector2 muzzleCrawl = new Vector2(0.08f, -0.12f);
-
     [Header("Spread Shot")]
     public float spreadShotFireRate = 0.15f;
     public GameObject spreadIconUI; // Drag SpreadIconUI GameObject
-
+    [Header("Boss Fight Arena")]
+    public float bossArenaMinX = 115f;
+    public float bossArenaMaxX = 135f;
+    private bool inBossFight = false;
     private bool isSpreadShotActive = false;
-
     private PlayerHealth health;
     private Rigidbody2D rb;
     private Animator animator;
@@ -35,7 +34,6 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private bool isCrouching;
     private bool isVerticalAiming = false; // Track if player is aiming vertically
-
     private enum AimDirection { Forward, Up, Down, UpDiag, DownDiag }
     private AimDirection currentAimDir = AimDirection.Forward;
 
@@ -45,11 +43,9 @@ public class PlayerController : MonoBehaviour
         animator = GetComponent<Animator>();
         spriteRenderer = GetComponent<SpriteRenderer>();
         health = GetComponent<PlayerHealth>();
-
         animator.SetBool("IsRunning", false);
         animator.SetBool("IsJumping", false);
         animator.SetBool("IsCrouching", false);
-
         if (spreadIconUI != null)
         {
             spreadIconUI.SetActive(false);
@@ -72,22 +68,18 @@ public class PlayerController : MonoBehaviour
             isCrouching = !isCrouching;
             animator.SetBool("IsCrouching", isCrouching);
         }
-
         // Ground check
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
-
         // Jump
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !isCrouching)
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
-
         // Mouse aim preview
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
         float mouseYRelative = mousePos.y - transform.position.y;
         float mouseXRelative = mousePos.x - transform.position.x;
-
         if (mouseYRelative > 0.5f)
         {
             currentAimDir = Mathf.Abs(mouseXRelative) > 1f ? AimDirection.UpDiag : AimDirection.Up;
@@ -100,12 +92,9 @@ public class PlayerController : MonoBehaviour
         {
             currentAimDir = AimDirection.Forward;
         }
-
         float horizontal = Input.GetAxisRaw("Horizontal");
-
         // Check if aiming purely vertical (Up or Down, not diagonal)
         bool isAimingVertical = (currentAimDir == AimDirection.Up || currentAimDir == AimDirection.Down);
-
         // Set vertical aiming flag when holding LMB and aiming vertically
         if (Input.GetMouseButton(0) && isAimingVertical)
         {
@@ -115,37 +104,29 @@ public class PlayerController : MonoBehaviour
         {
             isVerticalAiming = false;
         }
-
         // Trigger standing shoot animations (interrupts other animations) - but only when grounded
         if (Input.GetMouseButtonDown(0) && isGrounded)
         {
             animator.SetTrigger("Shoot" + currentAimDir);
         }
-
         // Running aim Bools - only active when NOT in vertical aiming mode and grounded
         bool isMoving = Mathf.Abs(horizontal) > 0 && !isVerticalAiming;
         animator.SetBool("IsRunUpDiag", isMoving && currentAimDir == AimDirection.UpDiag && isGrounded);
         animator.SetBool("IsRunDownDiag", isMoving && currentAimDir == AimDirection.DownDiag && isGrounded);
-
         // Crawl Bool
         animator.SetBool("IsCrawl", isCrouching && isMoving);
-
         // Layer weights
         // RunAim layer only when running + diag aim
         bool runAimActive = animator.GetBool("IsRunUpDiag") || animator.GetBool("IsRunDownDiag");
         animator.SetLayerWeight(1, runAimActive ? 1f : 0f);
-
         // Crawl layer — always allow if condition true (no disable mid-air)
         animator.SetLayerWeight(2, animator.GetBool("IsCrawl") ? 1f : 0f);
-
         // JumpPriority highest mid-air
         animator.SetLayerWeight(3, !isGrounded ? 3f : 0f);
-
         // Shooting
         if (Input.GetMouseButtonDown(0) && Time.time >= nextFireTime)
         {
             nextFireTime = Time.time + (isSpreadShotActive ? spreadShotFireRate : fireRate);
-
             Vector2 selectedMuzzle = muzzleStand;
             if (isCrouching)
             {
@@ -161,11 +142,9 @@ public class PlayerController : MonoBehaviour
                     case AimDirection.DownDiag: selectedMuzzle = muzzleDownDiag; break;
                 }
             }
-
             Vector3 spawnPos = selectedMuzzle;
             spawnPos.x *= spriteRenderer.flipX ? -1f : 1f;
             spawnPos = transform.TransformPoint(spawnPos);
-
             Vector2 bulletDir = Vector2.right;
             switch (currentAimDir)
             {
@@ -175,7 +154,6 @@ public class PlayerController : MonoBehaviour
                 case AimDirection.DownDiag: bulletDir = new Vector2(0.8f, -0.6f).normalized; break;
             }
             if (spriteRenderer.flipX) bulletDir.x *= -1f;
-
             if (isSpreadShotActive)
             {
                 float[] angles = { -15f, 0f, 15f };
@@ -192,7 +170,6 @@ public class PlayerController : MonoBehaviour
                 bullet.GetComponent<Bullet>().Initialise(bulletDir);
             }
         }
-
         // Animations - Running disabled during vertical aiming
         animator.SetBool("IsRunning", isMoving && !isCrouching);
         animator.SetBool("IsJumping", !isGrounded);
@@ -201,12 +178,10 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
-
         // Lock movement when aiming vertically
         if (!isVerticalAiming)
         {
             rb.linearVelocity = new Vector2(horizontal * moveSpeed, rb.linearVelocity.y);
-
             if (horizontal > 0) spriteRenderer.flipX = false;
             else if (horizontal < 0) spriteRenderer.flipX = true;
         }
@@ -214,6 +189,12 @@ public class PlayerController : MonoBehaviour
         {
             // Keep vertical velocity but lock horizontal movement
             rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+        }
+        // Clamp player position during boss fight
+        if (inBossFight)
+        {
+            float clampedX = Mathf.Clamp(transform.position.x, bossArenaMinX, bossArenaMaxX);
+            transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
         }
     }
 
@@ -231,9 +212,25 @@ public class PlayerController : MonoBehaviour
     public void DeactivateSpreadShot()
     {
         isSpreadShotActive = false;
+        nextFireTime = 0f; // Reset for immediate fire post-respawn
         if (spreadIconUI != null)
         {
             spreadIconUI.SetActive(false);
         }
+    }
+
+    // Called when boss spawns
+    public void EnterBossFight()
+    {
+        inBossFight = true;
+        Debug.Log("Boss fight started! Player restricted to arena.");
+    }
+
+    // Called when boss dies
+    public void OnBossDefeated()
+    {
+        inBossFight = false;
+        Debug.Log("Boss defeated! Player wins!");
+        // TODO: Victory UI (panel, score, restart) - we can add next!
     }
 }
