@@ -34,6 +34,7 @@ public class PlayerController : MonoBehaviour
     private SpriteRenderer spriteRenderer;
     private bool isGrounded;
     private bool isCrouching;
+    private bool isVerticalAiming = false; // Track if player is aiming vertically
 
     private enum AimDirection { Forward, Up, Down, UpDiag, DownDiag }
     private AimDirection currentAimDir = AimDirection.Forward;
@@ -100,23 +101,45 @@ public class PlayerController : MonoBehaviour
             currentAimDir = AimDirection.Forward;
         }
 
-        // Standing aim trigger
-        if (Input.GetMouseButtonDown(0))
+        float horizontal = Input.GetAxisRaw("Horizontal");
+
+        // Check if aiming purely vertical (Up or Down, not diagonal)
+        bool isAimingVertical = (currentAimDir == AimDirection.Up || currentAimDir == AimDirection.Down);
+
+        // Set vertical aiming flag when holding LMB and aiming vertically
+        if (Input.GetMouseButton(0) && isAimingVertical)
+        {
+            isVerticalAiming = true;
+        }
+        else
+        {
+            isVerticalAiming = false;
+        }
+
+        // Trigger standing shoot animations (interrupts other animations) - but only when grounded
+        if (Input.GetMouseButtonDown(0) && isGrounded)
         {
             animator.SetTrigger("Shoot" + currentAimDir);
         }
 
-        // Running aim Bools
-        float horizontal = Input.GetAxisRaw("Horizontal");
-        animator.SetBool("IsRunUpDiag", Mathf.Abs(horizontal) > 0 && currentAimDir == AimDirection.UpDiag);
-        animator.SetBool("IsRunDownDiag", Mathf.Abs(horizontal) > 0 && currentAimDir == AimDirection.DownDiag);
+        // Running aim Bools - only active when NOT in vertical aiming mode and grounded
+        bool isMoving = Mathf.Abs(horizontal) > 0 && !isVerticalAiming;
+        animator.SetBool("IsRunUpDiag", isMoving && currentAimDir == AimDirection.UpDiag && isGrounded);
+        animator.SetBool("IsRunDownDiag", isMoving && currentAimDir == AimDirection.DownDiag && isGrounded);
 
         // Crawl Bool
-        animator.SetBool("IsCrawl", isCrouching && Mathf.Abs(horizontal) > 0);
+        animator.SetBool("IsCrawl", isCrouching && isMoving);
 
-        // RunAim layer weight
+        // Layer weights
+        // RunAim layer only when running + diag aim
         bool runAimActive = animator.GetBool("IsRunUpDiag") || animator.GetBool("IsRunDownDiag");
         animator.SetLayerWeight(1, runAimActive ? 1f : 0f);
+
+        // Crawl layer — always allow if condition true (no disable mid-air)
+        animator.SetLayerWeight(2, animator.GetBool("IsCrawl") ? 1f : 0f);
+
+        // JumpPriority highest mid-air
+        animator.SetLayerWeight(3, !isGrounded ? 3f : 0f);
 
         // Shooting
         if (Input.GetMouseButtonDown(0) && Time.time >= nextFireTime)
@@ -170,18 +193,28 @@ public class PlayerController : MonoBehaviour
             }
         }
 
-        // Animations
-        animator.SetBool("IsRunning", Mathf.Abs(horizontal) > 0 && !isCrouching);
+        // Animations - Running disabled during vertical aiming
+        animator.SetBool("IsRunning", isMoving && !isCrouching);
         animator.SetBool("IsJumping", !isGrounded);
     }
 
     void FixedUpdate()
     {
         float horizontal = Input.GetAxisRaw("Horizontal");
-        rb.linearVelocity = new Vector2(horizontal * moveSpeed, rb.linearVelocity.y);
 
-        if (horizontal > 0) spriteRenderer.flipX = false;
-        else if (horizontal < 0) spriteRenderer.flipX = true;
+        // Lock movement when aiming vertically
+        if (!isVerticalAiming)
+        {
+            rb.linearVelocity = new Vector2(horizontal * moveSpeed, rb.linearVelocity.y);
+
+            if (horizontal > 0) spriteRenderer.flipX = false;
+            else if (horizontal < 0) spriteRenderer.flipX = true;
+        }
+        else
+        {
+            // Keep vertical velocity but lock horizontal movement
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
+        }
     }
 
     // Called by pickup

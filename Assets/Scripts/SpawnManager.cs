@@ -9,10 +9,14 @@ public class SpawnManager : MonoBehaviour
     [Header("Enemy Types")]
     public GameObject enemyMechPrefab;
     public GameObject flyingBotPrefab;
-    public float flyingBotChance = 0.2f; // 20% chance
+    public float flyingBotChance = 0.2f;
+
+    [Header("Limits")]
+    public int maxMechs = 5;
 
     private float timer;
     private Camera mainCam;
+    private int activeMechCount = 0;
 
     void Start()
     {
@@ -39,16 +43,19 @@ public class SpawnManager : MonoBehaviour
 
         if (Random.value < flyingBotChance && flyingBotPrefab != null)
         {
-            // FlyingBot spawns high (swoop from top)
-            Vector3 highSpawn = new Vector3(spawnX, mainCam.transform.position.y + 4f, 0);
+            Vector3 highSpawn = new Vector3(spawnX, mainCam.transform.position.y + 8f, 0);
             Instantiate(flyingBotPrefab, highSpawn, Quaternion.identity);
         }
-        else if (hit.collider != null && enemyMechPrefab != null)
+        else if (hit.collider != null && enemyMechPrefab != null && activeMechCount < maxMechs)
         {
-            // Mech on ground
             Vector3 spawnPos = hit.point;
             spawnPos.y += 0.6f;
-            Instantiate(enemyMechPrefab, spawnPos, Quaternion.identity);
+
+            GameObject mech = Instantiate(enemyMechPrefab, spawnPos, Quaternion.identity);
+            activeMechCount++;
+
+            // Subscribe to static event (correct syntax)
+            Enemy.OnDestroyed += () => activeMechCount--;
         }
     }
 }

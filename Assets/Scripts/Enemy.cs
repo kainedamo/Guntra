@@ -1,8 +1,11 @@
 using UnityEngine;
-using System.Collections; // For IEnumerator
+using System;
+using System.Collections;
 
 public class Enemy : MonoBehaviour
 {
+    public static event Action OnDestroyed;
+
     public float moveSpeed = 1.5f;
     public int maxHealth = 3;
     public float edgeCheckDistance = 0.6f;
@@ -14,15 +17,15 @@ public class Enemy : MonoBehaviour
     public float enemyFireRate = 2.5f;
     private float nextEnemyFireTime;
 
+    [Header("Pickups")]
+    public GameObject healthPickupPrefab;
+    public float pickupDropChance = 0.25f;
+
     private int currentHealth;
     private Rigidbody2D rb;
     private SpriteRenderer sr;
     private int direction = -1;
     private Transform player;
-
-    [Header("Pickups")]
-    public GameObject healthPickupPrefab; // Drag HealthPickup prefab
-    public float pickupDropChance = 0.25f; // 25% chance
 
     void Awake()
     {
@@ -30,27 +33,32 @@ public class Enemy : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         currentHealth = maxHealth;
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
+        nextEnemyFireTime = Time.time;
     }
 
     void FixedUpdate()
     {
-        // Edge detection
+        // Face player only if far away (>5 units — no jitter)
+        if (player != null && Mathf.Abs(player.position.x - transform.position.x) > 5f)
+        {
+            direction = player.position.x > transform.position.x ? 1 : -1;
+        }
+
+        // Edge detection fallback
         Vector2 edgeCheckPos = (Vector2)transform.position + new Vector2(direction * 0.55f, -0.6f);
         bool groundAhead = Physics2D.Raycast(edgeCheckPos, Vector2.down, edgeCheckDistance, groundLayer);
-
         if (!groundAhead)
         {
             direction *= -1;
         }
 
         // Movement
-        rb.linearVelocity = new Vector2(direction * moveSpeed, 0f); // Clamp Y to 0
+        rb.linearVelocity = new Vector2(direction * moveSpeed, 0f);
 
         // Flip
         sr.flipX = direction < 0;
 
-        // Enemy shooting
-        if (Time.time >= nextEnemyFireTime && player != null)
+        if (Time.time >= nextEnemyFireTime && player != null && enemyBulletPrefab != null && enemyFirePoint != null)
         {
             nextEnemyFireTime = Time.time + enemyFireRate;
 
@@ -82,13 +90,11 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        // Spawn health pickup (25% chance)
-        if (healthPickupPrefab != null && Random.value < pickupDropChance)
+        if (healthPickupPrefab != null && UnityEngine.Random.value < pickupDropChance)
         {
             Instantiate(healthPickupPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
         }
 
-        // Death effect
         ParticleSystem deathEffect = GetComponentInChildren<ParticleSystem>();
         if (deathEffect != null)
         {
@@ -98,10 +104,14 @@ public class Enemy : MonoBehaviour
             deathEffect.Play();
             Destroy(deathEffect.gameObject, deathEffect.main.duration);
         }
-        Destroy(gameObject);
 
-        // Add score
-        ScoreManager.instance.AddScore(100);
+        if (ScoreManager.instance != null)
+        {
+            ScoreManager.instance.AddScore(100);
+        }
+
+        OnDestroyed?.Invoke();
+        Destroy(gameObject);
     }
 
     void OnDrawGizmosSelected()
