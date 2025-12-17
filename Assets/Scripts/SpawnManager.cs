@@ -14,6 +14,13 @@ public class SpawnManager : MonoBehaviour
     [Header("Limits")]
     public int maxMechs = 5;
 
+    [Header("Forbidden Spawn Zones")]
+    public Vector2[] forbiddenXRanges = new Vector2[]
+    {
+        new Vector2(-10.5f, 0f) // Your platform X range (PointA to PointB)
+        // Add more: new Vector2(minX, maxX)
+    };
+
     private float timer;
     private Camera mainCam;
     private int activeMechCount = 0;
@@ -37,6 +44,17 @@ public class SpawnManager : MonoBehaviour
     {
         float spawnX = mainCam.transform.position.x +
                        (mainCam.orthographicSize * mainCam.aspect) + spawnDistanceFromCamera;
+
+        // Check if spawnX is in any forbidden range
+        bool inForbiddenZone = false;
+        foreach (Vector2 range in forbiddenXRanges)
+        {
+            if (spawnX >= range.x && spawnX <= range.y)
+            {
+                inForbiddenZone = true;
+                break;
+            }
+        }
 
         Vector2 rayOrigin = new Vector2(spawnX, mainCam.transform.position.y + 10f);
         RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, 50f, groundLayer);
