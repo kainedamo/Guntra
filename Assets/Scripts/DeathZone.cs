@@ -5,10 +5,19 @@ public class DeathZone : MonoBehaviour
 {
     void OnTriggerEnter2D(Collider2D other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") || other.CompareTag("Enemy"))
         {
-            // Restart level
-            SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            // Restart level on player death
+            if (other.CompareTag("Player"))
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+
+            // Destroy enemy (no restart needed)
+            if (other.CompareTag("Enemy"))
+            {
+                Destroy(other.gameObject);
+            }
         }
     }
 }

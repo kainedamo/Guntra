@@ -38,35 +38,46 @@ public class Enemy : MonoBehaviour
 
     void FixedUpdate()
     {
-        // Face player only if far away (>5 units — no jitter)
-        if (player != null && Mathf.Abs(player.position.x - transform.position.x) > 5f)
+        // Ground check
+        Vector2 groundCheckPos = (Vector2)transform.position + Vector2.down * 0.6f;
+        bool onGround = Physics2D.OverlapCircle(groundCheckPos, 0.1f, groundLayer);
+
+        if (onGround)
         {
-            direction = player.position.x > transform.position.x ? 1 : -1;
+            // Face player only if far away (>5 units — no jitter)
+            if (player != null && Mathf.Abs(player.position.x - transform.position.x) > 5f)
+            {
+                direction = player.position.x > transform.position.x ? 1 : -1;
+            }
+
+            // Edge detection fallback
+            Vector2 edgeCheckPos = (Vector2)transform.position + new Vector2(direction * 0.55f, -0.6f);
+            bool groundAhead = Physics2D.Raycast(edgeCheckPos, Vector2.down, edgeCheckDistance, groundLayer);
+            if (!groundAhead)
+            {
+                direction *= -1;
+            }
+
+            // Movement (preserve Y)
+            rb.linearVelocity = new Vector2(direction * moveSpeed, rb.linearVelocity.y);
+
+            // Flip (prefab orientation)
+            sr.flipX = direction < 0;
+
+            // Shooting (grounded only)
+            if (Time.time >= nextEnemyFireTime && player != null && enemyBulletPrefab != null && enemyFirePoint != null)
+            {
+                nextEnemyFireTime = Time.time + enemyFireRate;
+                Vector2 dirToPlayer = (player.position - transform.position).normalized;
+                Vector3 spawnPos = enemyFirePoint.position;
+                GameObject bullet = Instantiate(enemyBulletPrefab, spawnPos, Quaternion.identity);
+                bullet.GetComponent<EnemyBullet>().Initialise(dirToPlayer);
+            }
         }
-
-        // Edge detection fallback
-        Vector2 edgeCheckPos = (Vector2)transform.position + new Vector2(direction * 0.55f, -0.6f);
-        bool groundAhead = Physics2D.Raycast(edgeCheckPos, Vector2.down, edgeCheckDistance, groundLayer);
-        if (!groundAhead)
+        else
         {
-            direction *= -1;
-        }
-
-        // Movement
-        rb.linearVelocity = new Vector2(direction * moveSpeed, 0f);
-
-        // Flip
-        sr.flipX = direction < 0;
-
-        if (Time.time >= nextEnemyFireTime && player != null && enemyBulletPrefab != null && enemyFirePoint != null)
-        {
-            nextEnemyFireTime = Time.time + enemyFireRate;
-
-            Vector2 dirToPlayer = (player.position - transform.position).normalized;
-            Vector3 spawnPos = enemyFirePoint.position;
-
-            GameObject bullet = Instantiate(enemyBulletPrefab, spawnPos, Quaternion.identity);
-            bullet.GetComponent<EnemyBullet>().Initialise(dirToPlayer);
+            // Falling — no horizontal movement
+            rb.linearVelocity = new Vector2(0, rb.linearVelocity.y);
         }
     }
 
