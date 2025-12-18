@@ -1,4 +1,6 @@
 using UnityEngine;
+using System.Collections;
+using Unity.Cinemachine;
 
 public class EnemyBossNew : MonoBehaviour
 {
@@ -21,7 +23,7 @@ public class EnemyBossNew : MonoBehaviour
 
     [Header("Arena Bounds")]
     public float arenaMinX = 115f;
-    public float arenaMaxX = 155f;
+    public float arenaMaxX = 136f;
 
     private Transform player;
     private PlayerController playerController;
@@ -134,15 +136,82 @@ public class EnemyBossNew : MonoBehaviour
         }
     }
 
+    // Manual shake fallback (if no Cinemachine Impulse)
+    private IEnumerator CameraShake(float intensity, float duration)
+    {
+        Transform cam = Camera.main.transform;
+        Vector3 originalPos = cam.localPosition;
+        float elapsed = 0f;
+
+        while (elapsed < duration)
+        {
+            float x = Random.Range(-1f, 1f) * intensity;
+            float y = Random.Range(-1f, 1f) * intensity;
+            cam.localPosition = originalPos + new Vector3(x, y, 0);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+        cam.localPosition = originalPos;
+    }
+
+    // Slow-mo death (feels cinematic)
+    private IEnumerator BossSlowMo()
+    {
+        Time.timeScale = 0.3f; // 30% speed
+        Time.fixedDeltaTime = 0.02f * Time.timeScale; // Physics sync
+        yield return new WaitForSecondsRealtime(0.4f); // Real-time wait
+        Time.timeScale = 1f;
+        Time.fixedDeltaTime = 0.02f;
+    }
+
     private void Die()
     {
         Debug.Log("Boss defeated!");
 
+        // Hide boss sprite instantly (no linger)
+        if (spriteRenderer != null)
+        {
+            spriteRenderer.enabled = false;
+        }
+
+        // Explosion effect
+        ParticleSystem explosionEffect = GetComponentInChildren<ParticleSystem>();
+        if (explosionEffect != null)
+        {
+            explosionEffect.transform.parent = null;
+            explosionEffect.Stop();
+            explosionEffect.Clear();
+            explosionEffect.Play();
+            Destroy(explosionEffect.gameObject, explosionEffect.main.duration + 0.5f);
+        }
+
+        // Score bonus
+        if (ScoreManager.instance != null)
+        {
+            ScoreManager.instance.AddScore(1000);
+        }
+
+        // Shake (Cinemachine or fallback)
+        CinemachineImpulseSource shakeSource = GetComponent<CinemachineImpulseSource>();
+        if (shakeSource != null)
+        {
+            shakeSource.GenerateImpulse();
+        }
+        else
+        {
+            StartCoroutine(CameraShake(0.3f, 0.5f));
+        }
+
+        // Slow-mo
+        StartCoroutine(BossSlowMo());
+
+        // Victory
         if (playerController != null)
         {
             playerController.OnBossDefeated();
         }
 
-        Destroy(gameObject);
+        // Delay destroy for effects to finish
+        Destroy(gameObject, 2f);
     }
 }

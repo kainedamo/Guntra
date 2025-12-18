@@ -10417,7 +10417,7 @@ MonoBehaviour:
   spreadIconUI: {fileID: 1150110414}
   bossArenaMinX: 115
   bossArenaMaxX: 149
-  spawnAtBossArena: 1
+  spawnAtBossArena: 0
   bossArenaSpawnX: 120
   bossArenaSpawnY: 6.5
 --- !u!114 &389064763
@@ -10873,7 +10873,7 @@ MonoBehaviour:
   m_Intensity: 1
   m_LightVolumeIntensity: 1
   m_LightVolumeEnabled: 0
-  m_ApplyToSortingLayers: 00000000
+  m_ApplyToSortingLayers: 000000000153418d27dd27f5937ef4a8
   m_LightCookieSprite: {fileID: 0}
   m_DeprecatedPointLightCookieSprite: {fileID: 0}
   m_LightOrder: 0
