@@ -27,11 +27,6 @@ public class EnemyBullet : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (collision.gameObject.CompareTag("Ground") || collision.gameObject.layer == LayerMask.NameToLayer("Ground"))
-        {
-            Destroy(gameObject);
-        }
-
         if (collision.gameObject.CompareTag("Enemy"))
         {
             // Optionally ignore collision with enemies

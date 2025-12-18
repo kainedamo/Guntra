@@ -3,7 +3,7 @@ using UnityEngine;
 public class Bullet : MonoBehaviour
 {
     public float speed = 12f; // Tweak in prefab
-    public float lifetime = 2f; // Auto-destroy after 2 seconds (safe off-screen)
+    public float lifetime = 6f; // Auto-destroy after 6 seconds (safe off-screen)
     private Rigidbody2D rb;
 
     void Awake()
@@ -16,12 +16,6 @@ public class Bullet : MonoBehaviour
     {
         rb.linearVelocity = direction * speed;
         Destroy(gameObject, lifetime);
-    }
-
-    // Optional: destroy on leaving screen (extra safety)
-    void OnBecameInvisible()
-    {
-        Destroy(gameObject);
     }
 
     void OnTriggerEnter2D(Collider2D other)

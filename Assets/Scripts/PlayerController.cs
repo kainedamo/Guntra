@@ -28,7 +28,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Boss Fight Arena")]
     public float bossArenaMinX = 115f;
-    public float bossArenaMaxX = 149f;
+    public float bossArenaMaxX = 136f;
     private bool inBossFight = false;
 
     [Header("Debug/Testing")]
