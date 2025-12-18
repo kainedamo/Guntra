@@ -21,7 +21,7 @@ public class EnemyBossNew : MonoBehaviour
 
     [Header("Arena Bounds")]
     public float arenaMinX = 115f;
-    public float arenaMaxX = 135f;
+    public float arenaMaxX = 155f;
 
     private Transform player;
     private PlayerController playerController;

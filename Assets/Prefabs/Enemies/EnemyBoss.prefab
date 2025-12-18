@@ -187,7 +187,7 @@ MonoBehaviour:
   fireRate: 1.5
   damageToPlayer: 1
   arenaMinX: 115
-  arenaMaxX: 135
+  arenaMaxX: 136
 --- !u!1 &1315667879744259966
 GameObject:
   m_ObjectHideFlags: 0

@@ -33,7 +33,7 @@ public class Enemy : MonoBehaviour
         sr = GetComponent<SpriteRenderer>();
         currentHealth = maxHealth;
         player = GameObject.FindGameObjectWithTag("Player")?.transform;
-        nextEnemyFireTime = Time.time;
+        nextEnemyFireTime = Time.time - enemyFireRate;
     }
 
     void FixedUpdate()
