@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9112837186967678719}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyFirePoint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -44,7 +44,7 @@ GameObject:
   - component: {fileID: 7416722623304954504}
   - component: {fileID: 238956464866510475}
   - component: {fileID: 8263847640600368397}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: EnemyMech
   m_TagString: Enemy
   m_Icon: {fileID: 0}
@@ -216,7 +216,7 @@ MonoBehaviour:
   edgeCheckDistance: 0.6
   groundLayer:
     serializedVersion: 2
-    m_Bits: 256
+    m_Bits: 0
   enemyBulletPrefab: {fileID: 7442103177845021621, guid: d742a8e29d4a83f4a80ce86465ac306e, type: 3}
   enemyFirePoint: {fileID: 9112837186967678719}
   enemyFireRate: 2.5
@@ -233,7 +233,7 @@ GameObject:
   - component: {fileID: 8371479963815554758}
   - component: {fileID: 5435494684253748427}
   - component: {fileID: 5933628773994157091}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: DeathEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}

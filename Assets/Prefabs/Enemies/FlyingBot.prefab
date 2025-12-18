@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6618562185630364149}
   - component: {fileID: 8380485190100189821}
   - component: {fileID: 7227485036290634045}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: DeathEffect
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4925,7 +4925,7 @@ GameObject:
   - component: {fileID: 5740573612397841757}
   - component: {fileID: 5906828735956892140}
   - component: {fileID: 160031287848259438}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: FlyingBot
   m_TagString: Enemy
   m_Icon: {fileID: 0}

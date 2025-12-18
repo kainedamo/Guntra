@@ -6,11 +6,13 @@ public class PlayerController : MonoBehaviour
     public float jumpForce = 10f;
     public Transform groundCheck;
     public LayerMask groundLayer;
+
     [Header("Shooting")]
     public GameObject bulletPrefab;
     public Transform firePoint;
     public float fireRate = 0.2f;
     private float nextFireTime = 0f;
+
     [Header("Aim Muzzle Offsets")]
     public Vector2 muzzleStand = new Vector2(0.6f, 0.12f);
     public Vector2 muzzleCrouch = new Vector2(0.6f, 0.002f);
@@ -19,13 +21,21 @@ public class PlayerController : MonoBehaviour
     public Vector2 muzzleUpDiag = new Vector2(0.55f, 0.25f);
     public Vector2 muzzleDownDiag = new Vector2(0.6f, -0.05f);
     public Vector2 muzzleCrawl = new Vector2(0.08f, -0.12f);
+
     [Header("Spread Shot")]
     public float spreadShotFireRate = 0.15f;
     public GameObject spreadIconUI; // Drag SpreadIconUI GameObject
+
     [Header("Boss Fight Arena")]
     public float bossArenaMinX = 115f;
     public float bossArenaMaxX = 135f;
     private bool inBossFight = false;
+
+    [Header("Debug/Testing")]
+    public bool spawnAtBossArena = false;
+    public float bossArenaSpawnX = 120f;
+    public float bossArenaSpawnY = 6.5f; // Ground level for boss arena
+
     private bool isSpreadShotActive = false;
     private PlayerHealth health;
     private Rigidbody2D rb;
@@ -49,6 +59,14 @@ public class PlayerController : MonoBehaviour
         if (spreadIconUI != null)
         {
             spreadIconUI.SetActive(false);
+        }
+
+        // Debug: Spawn at boss arena for testing
+        if (spawnAtBossArena)
+        {
+            Vector3 testSpawnPos = new Vector3(bossArenaSpawnX, bossArenaSpawnY, transform.position.z);
+            transform.position = testSpawnPos;
+            Debug.Log($"Debug mode: Player spawned at boss arena position ({bossArenaSpawnX}, {bossArenaSpawnY})");
         }
     }
 

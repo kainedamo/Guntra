@@ -32,8 +32,8 @@ public class Bullet : MonoBehaviour
             enemy.TakeDamage(1);
             Destroy(gameObject); // Bullet disappears on hit
         }
-        // Hit boss
-        else if (other.TryGetComponent<EnemyBoss>(out EnemyBoss boss))
+        // Hit boss (new script name)
+        else if (other.TryGetComponent<EnemyBossNew>(out EnemyBossNew boss))
         {
             boss.TakeDamage(1);
             Destroy(gameObject);
