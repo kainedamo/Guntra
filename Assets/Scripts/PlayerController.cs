@@ -1,4 +1,6 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using System.Collections;
 
 public class PlayerController : MonoBehaviour
 {
@@ -35,6 +37,9 @@ public class PlayerController : MonoBehaviour
     public bool spawnAtBossArena = false;
     public float bossArenaSpawnX = 120f;
     public float bossArenaSpawnY = 6.5f; // Ground level for boss arena
+
+    [Header("Victory UI")]
+    public GameObject victoryPanel; // Drag VictoryPanel here
 
     private bool isSpreadShotActive = false;
     private PlayerHealth health;
@@ -248,7 +253,22 @@ public class PlayerController : MonoBehaviour
     public void OnBossDefeated()
     {
         inBossFight = false;
-        Debug.Log("Boss defeated! Player wins!");
-        // TODO: Victory UI (panel, score, restart) - we can add next!
+        Debug.Log("Boss defeated! Triggering victory in 2.5s...");
+
+        // Delay for explosion + shake to finish
+        StartCoroutine(ShowVictoryScreen(2.5f));
+    }
+
+    private IEnumerator ShowVictoryScreen(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+
+        if (victoryPanel != null)
+        {
+            victoryPanel.SetActive(true);
+        }
+
+        Time.timeScale = 0f; // Freeze everything (UI exempt)
+        Debug.Log("STAGE CLEAR!");
     }
 }

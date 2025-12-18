@@ -319,7 +319,7 @@ TextureImporter:
       name: StageClear_8
       rect:
         serializedVersion: 2
-        x: 406
+        x: 395
         y: 7
         width: 31
         height: 26
@@ -341,7 +341,7 @@ TextureImporter:
       name: StageClear_9
       rect:
         serializedVersion: 2
-        x: 451
+        x: 440
         y: 7
         width: 30
         height: 26
