@@ -4,7 +4,7 @@ public class MovingPlatform : MonoBehaviour
 {
     public Transform pointA;
     public Transform pointB;
-    public float moveSpeed = 2f;
+    public float moveSpeed = 2.5f;
 
     private Vector3 nextPosition;
     private Rigidbody2D rb;
