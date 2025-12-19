@@ -69,6 +69,7 @@ public class Enemy : MonoBehaviour
         if (Time.time >= nextEnemyFireTime && player != null && enemyBulletPrefab != null && enemyFirePoint != null)
         {
             nextEnemyFireTime = Time.time + enemyFireRate;
+            AudioManager.Instance?.PlaySFX(AudioManager.Instance.enemyShootClip); //SFX
 
             Vector2 dirToPlayer = (player.position - transform.position).normalized;
             Vector3 spawnPos = enemyFirePoint.position;
@@ -102,12 +103,13 @@ public class Enemy : MonoBehaviour
 
     void Die()
     {
-        if (healthPickupPrefab != null && UnityEngine.Random.value < pickupDropChance)
+        AudioManager.Instance?.PlaySFX(AudioManager.Instance.enemyDeathClip); // SFX
+        if (healthPickupPrefab != null && UnityEngine.Random.value < pickupDropChance) // Health pickup drop
         {
             Instantiate(healthPickupPrefab, transform.position + Vector3.up * 0.5f, Quaternion.identity);
         }
 
-        ParticleSystem deathEffect = GetComponentInChildren<ParticleSystem>();
+        ParticleSystem deathEffect = GetComponentInChildren<ParticleSystem>(); // Death effect
         if (deathEffect != null)
         {
             deathEffect.transform.parent = null;
@@ -117,7 +119,7 @@ public class Enemy : MonoBehaviour
             Destroy(deathEffect.gameObject, deathEffect.main.duration);
         }
 
-        if (ScoreManager.instance != null)
+        if (ScoreManager.instance != null) // Activates player score
         {
             ScoreManager.instance.AddScore(100);
         }

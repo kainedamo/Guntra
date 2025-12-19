@@ -8738,21 +8738,11 @@ Tilemap:
       m_TileObjectToInstantiateIndex: 65535
       dummyAlignment: 0
       m_AllTileFlags: 1073741825
-  - first: {x: 73, y: 5, z: 0}
+  - first: {x: 74, y: 5, z: 0}
     second:
       serializedVersion: 2
       m_TileIndex: 1
       m_TileSpriteIndex: 3
-      m_TileMatrixIndex: 0
-      m_TileColorIndex: 0
-      m_TileObjectToInstantiateIndex: 65535
-      dummyAlignment: 0
-      m_AllTileFlags: 1073741825
-  - first: {x: 74, y: 5, z: 0}
-    second:
-      serializedVersion: 2
-      m_TileIndex: 0
-      m_TileSpriteIndex: 0
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -10140,7 +10130,7 @@ Tilemap:
       m_AllTileFlags: 1073741825
   m_AnimatedTiles: {}
   m_TileAssetArray:
-  - m_RefCount: 128
+  - m_RefCount: 127
     m_Data: {fileID: 11400000, guid: 32269c2caaea0c440b9f348248fcc3a1, type: 2}
   - m_RefCount: 10
     m_Data: {fileID: 11400000, guid: 6c2a4584b1b9fe44fb1927818f60363d, type: 2}
@@ -10155,7 +10145,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: 11400000, guid: 18df7916f358f644db8ba043c147595d, type: 2}
   m_TileSpriteArray:
-  - m_RefCount: 128
+  - m_RefCount: 127
     m_Data: {fileID: -1417988038, guid: bcb54771ff222ba4189c34bad464c1ea, type: 3}
   - m_RefCount: 38
     m_Data: {fileID: -1298685700, guid: bcb54771ff222ba4189c34bad464c1ea, type: 3}
@@ -10170,7 +10160,7 @@ Tilemap:
   - m_RefCount: 1
     m_Data: {fileID: -422345054, guid: bcb54771ff222ba4189c34bad464c1ea, type: 3}
   m_TileMatrixArray:
-  - m_RefCount: 928
+  - m_RefCount: 927
     m_Data:
       e00: 1
       e01: 0
@@ -10189,7 +10179,7 @@ Tilemap:
       e32: 0
       e33: 1
   m_TileColorArray:
-  - m_RefCount: 928
+  - m_RefCount: 927
     m_Data: {r: 1, g: 1, b: 1, a: 1}
   m_TileObjectToInstantiateArray: []
   m_AnimationFrameRate: 1
@@ -10802,7 +10792,7 @@ MonoBehaviour:
   spreadIconUI: {fileID: 1150110414}
   bossArenaMinX: 115
   bossArenaMaxX: 149
-  spawnAtBossArena: 0
+  spawnAtBossArena: 1
   bossArenaSpawnX: 120
   bossArenaSpawnY: 6.5
   victoryPanel: {fileID: 1348310058}
@@ -11595,6 +11585,59 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 68ab44b125baf4343a015591d97d389c, type: 3}
+--- !u!1 &756876718
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 756876720}
+  - component: {fileID: 756876719}
+  m_Layer: 0
+  m_Name: AudioManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &756876719
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756876718}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b08751235036864dbbe3981af3eafd5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AudioManager
+  playerShootClip: {fileID: 8300000, guid: 879f223ac2c705e42992fcc5f49a602e, type: 3}
+  enemyShootClip: {fileID: 8300000, guid: 69293e26f6b92264086ce69379be7dc6, type: 3}
+  enemyDeathClip: {fileID: 8300000, guid: 05c355f9427a146489a4d3990504af20, type: 3}
+  bossDeathClip: {fileID: 8300000, guid: ac8d7be5c69d8ba44b6047111f048ae2, type: 3}
+  playerHurtClip: {fileID: 8300000, guid: 4d3d6ae002bc6274c961f363a8b5f821, type: 3}
+  powerupClip: {fileID: 8300000, guid: c3291dd2000bc6f49b56132c7751bb4c, type: 3}
+  sfxVolume: 1
+  musicVolume: 1
+  pitchVariation: 0.3
+--- !u!4 &756876720
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 756876718}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 68.01792, y: 3.27279, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &838404415
 GameObject:
   m_ObjectHideFlags: 0
@@ -11761,7 +11804,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6911807772716651055, guid: 0cf7a207c5caa3347ad5690d9af514a4, type: 3}
       propertyPath: m_ConstrainProportionsScale
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -14015,6 +14058,7 @@ SceneRoots:
   - {fileID: 1913552510}
   - {fileID: 2068571390}
   - {fileID: 272586485}
+  - {fileID: 756876720}
   - {fileID: 500488197}
   - {fileID: 1541357802}
   - {fileID: 953386613}

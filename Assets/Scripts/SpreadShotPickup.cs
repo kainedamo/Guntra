@@ -14,6 +14,7 @@ public class SpreadShotPickup : MonoBehaviour
         if (other.CompareTag("Player") && playerController != null)
         {
             playerController.ActivateSpreadShot(); // Trigger spread
+            AudioManager.Instance?.PlaySFX(AudioManager.Instance.powerupClip);
             Destroy(gameObject);
         }
     }

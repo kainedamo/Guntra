@@ -80,6 +80,7 @@ public class PlayerController : MonoBehaviour
         if (other.CompareTag("Enemy"))
         {
             health.TakeDamage(1);
+            AudioManager.Instance?.PlaySFX(AudioManager.Instance.playerHurtClip);
         }
     }
 
@@ -91,13 +92,16 @@ public class PlayerController : MonoBehaviour
             isCrouching = !isCrouching;
             animator.SetBool("IsCrouching", isCrouching);
         }
+
         // Ground check
         isGrounded = Physics2D.OverlapCircle(groundCheck.position, 0.1f, groundLayer);
+
         // Jump
         if (Input.GetKeyDown(KeyCode.Space) && isGrounded && !isCrouching)
         {
             rb.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
         }
+
         // Mouse aim preview
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
@@ -116,7 +120,9 @@ public class PlayerController : MonoBehaviour
             currentAimDir = AimDirection.Forward;
         }
         float horizontal = Input.GetAxisRaw("Horizontal");
+
         // Check if aiming purely vertical (Up or Down, not diagonal)
+
         bool isAimingVertical = (currentAimDir == AimDirection.Up || currentAimDir == AimDirection.Down);
         // Set vertical aiming flag when holding LMB and aiming vertically
         if (Input.GetMouseButton(0) && isAimingVertical)
@@ -127,17 +133,21 @@ public class PlayerController : MonoBehaviour
         {
             isVerticalAiming = false;
         }
+
         // Trigger standing shoot animations (interrupts other animations) - but only when grounded
         if (Input.GetMouseButtonDown(0) && isGrounded)
         {
             animator.SetTrigger("Shoot" + currentAimDir);
         }
+
         // Running aim Bools - only active when NOT in vertical aiming mode and grounded
         bool isMoving = Mathf.Abs(horizontal) > 0 && !isVerticalAiming;
         animator.SetBool("IsRunUpDiag", isMoving && currentAimDir == AimDirection.UpDiag && isGrounded);
         animator.SetBool("IsRunDownDiag", isMoving && currentAimDir == AimDirection.DownDiag && isGrounded);
+
         // Crawl Bool
         animator.SetBool("IsCrawl", isCrouching && isMoving);
+
         // Layer weights
         // RunAim layer only when running + diag aim
         bool runAimActive = animator.GetBool("IsRunUpDiag") || animator.GetBool("IsRunDownDiag");
@@ -146,10 +156,12 @@ public class PlayerController : MonoBehaviour
         animator.SetLayerWeight(2, animator.GetBool("IsCrawl") ? 1f : 0f);
         // JumpPriority highest mid-air
         animator.SetLayerWeight(3, !isGrounded ? 3f : 0f);
+
         // Shooting
         if (Input.GetMouseButtonDown(0) && Time.time >= nextFireTime)
         {
             nextFireTime = Time.time + (isSpreadShotActive ? spreadShotFireRate : fireRate);
+            AudioManager.Instance?.PlaySFX(AudioManager.Instance.playerShootClip); //SFX
             Vector2 selectedMuzzle = muzzleStand;
             if (isCrouching)
             {

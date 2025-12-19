@@ -71,7 +71,7 @@ public class EnemyBossNew : MonoBehaviour
             transform.position = newPosition;
         }
 
-        // Face player (FIXED: removed the < sign, now uses >)
+        // Face player 
         if (spriteRenderer != null)
         {
             spriteRenderer.flipX = (player.position.x > transform.position.x);
@@ -81,6 +81,7 @@ public class EnemyBossNew : MonoBehaviour
         if (Time.time >= nextFireTime && bulletPrefab != null && firePoint != null)
         {
             nextFireTime = Time.time + fireRate;
+            AudioManager.Instance?.PlaySFX(AudioManager.Instance.enemyShootClip, 1.2f);
             Vector2 dir = (player.position - firePoint.position).normalized;
             GameObject bullet = Instantiate(bulletPrefab, firePoint.position, Quaternion.identity);
 
@@ -184,6 +185,8 @@ public class EnemyBossNew : MonoBehaviour
             explosionEffect.Play();
             Destroy(explosionEffect.gameObject, explosionEffect.main.duration + 0.5f);
         }
+
+        AudioManager.Instance?.PlaySFX(AudioManager.Instance.bossDeathClip); //SFX
 
         // Score bonus
         if (ScoreManager.instance != null)
