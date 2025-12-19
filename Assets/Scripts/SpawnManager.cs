@@ -93,7 +93,7 @@ public class SpawnManager : MonoBehaviour
     private void SpawnEnemyOffScreenRight()
     {
         float spawnX = mainCam.transform.position.x +
-                       (mainCam.orthographicSize * mainCam.aspect) + spawnDistanceFromCamera;
+                       (mainCam.orthographicSize * mainCam.aspect) + spawnDistanceFromCamera;  //MATHS CONTENT PRESENT HERE
 
         // Check if spawnX is in any forbidden zone
         if (IsInForbiddenZone(spawnX))
@@ -104,7 +104,7 @@ public class SpawnManager : MonoBehaviour
         Vector2 rayOrigin = new Vector2(spawnX, mainCam.transform.position.y + 10f);
         RaycastHit2D hit = Physics2D.Raycast(rayOrigin, Vector2.down, 50f, groundLayer);
 
-        if (Random.value < flyingBotChance && flyingBotPrefab != null)
+        if (Random.value < flyingBotChance && flyingBotPrefab != null) // MATHS CONTENT PRESENT HERE
         {
             Vector3 highSpawn = new Vector3(spawnX, mainCam.transform.position.y + 8f, 0);
             Instantiate(flyingBotPrefab, highSpawn, Quaternion.identity);

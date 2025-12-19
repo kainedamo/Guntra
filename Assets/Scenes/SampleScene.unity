@@ -11260,7 +11260,7 @@ MonoBehaviour:
   spreadIconUI: {fileID: 1150110414}
   bossArenaMinX: 115
   bossArenaMaxX: 149
-  spawnAtBossArena: 0
+  spawnAtBossArena: 1
   bossArenaSpawnX: 120
   bossArenaSpawnY: 6.5
   victoryPanel: {fileID: 1348310058}

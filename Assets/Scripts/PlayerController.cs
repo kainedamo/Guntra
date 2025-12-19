@@ -111,7 +111,7 @@ public class PlayerController : MonoBehaviour
         // Mouse aim preview
         Vector3 mousePos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         mousePos.z = 0;
-        float mouseYRelative = mousePos.y - transform.position.y;
+        float mouseYRelative = mousePos.y - transform.position.y; //MATHS CONTENT PRESENT HERE
         float mouseXRelative = mousePos.x - transform.position.x;
         if (mouseYRelative > 0.5f)
         {
@@ -200,7 +200,7 @@ public class PlayerController : MonoBehaviour
                 float[] angles = { -15f, 0f, 15f };
                 foreach (float angle in angles)
                 {
-                    Vector2 dir = Quaternion.Euler(0, 0, angle) * bulletDir;
+                    Vector2 dir = Quaternion.Euler(0, 0, angle) * bulletDir; //MATHS CONTENT PRESENT HERE
                     GameObject bullet = Instantiate(bulletPrefab, spawnPos, Quaternion.identity);
                     bullet.GetComponent<Bullet>().Initialise(dir);
                 }
@@ -234,7 +234,7 @@ public class PlayerController : MonoBehaviour
         // Clamp player position during boss fight
         if (inBossFight)
         {
-            float clampedX = Mathf.Clamp(transform.position.x, bossArenaMinX, bossArenaMaxX);
+            float clampedX = Mathf.Clamp(transform.position.x, bossArenaMinX, bossArenaMaxX); //MATHS CONTENT PRESENT HERE
             transform.position = new Vector3(clampedX, transform.position.y, transform.position.z);
         }
     }
