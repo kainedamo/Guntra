@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdc410a25a5cca540b9552ac4fb7f4f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::EnemyBossNew
-  maxHealth: 5
+  maxHealth: 65
   moveSpeed: 2
   stoppingDistance: 0.5
   bulletPrefab: {fileID: 7442103177845021621, guid: d742a8e29d4a83f4a80ce86465ac306e, type: 3}

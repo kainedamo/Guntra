@@ -41,6 +41,8 @@ public class PlayerController : MonoBehaviour
     [Header("Victory UI")]
     public GameObject victoryPanel; // Drag VictoryPanel here
 
+    public bool canControl = false; // Enabled after start menu
+
     private bool isSpreadShotActive = false;
     private PlayerHealth health;
     private Rigidbody2D rb;
@@ -84,8 +86,12 @@ public class PlayerController : MonoBehaviour
         }
     }
 
+    public void EnableControl() { canControl = true; } // Start menu use
+
     void Update()
     {
+        if (!canControl) return; //Skips input on start menu
+
         // Crouch toggle
         if (Input.GetKeyDown(KeyCode.S))
         {
