@@ -11,6 +11,7 @@ public class AudioManager : MonoBehaviour
     public AudioClip bossDeathClip;
     public AudioClip playerHurtClip;
     public AudioClip powerupClip;
+    public AudioClip bgmClip;
 
     [Header("Volumes")]
     [Range(0f, 1f)] public float sfxVolume = 0.8f;
@@ -39,9 +40,12 @@ public class AudioManager : MonoBehaviour
                 sfxSources[i].loop = false;
             }
 
+            //Music
             musicSource = gameObject.AddComponent<AudioSource>();
             musicSource.loop = true;
-            // musicSource.clip = bgmClip; musicSource.volume = musicVolume; musicSource.Play(); // Uncomment + assign
+            musicSource.clip = bgmClip;
+            musicSource.volume = musicVolume;
+            musicSource.Play();
         }
         else
         {
