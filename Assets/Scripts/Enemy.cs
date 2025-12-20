@@ -41,7 +41,7 @@ public class Enemy : MonoBehaviour
         if (player == null) return;
 
         float distToPlayer = Mathf.Abs(player.position.x - transform.position.x);
-        bool closeToPlayer = distToPlayer < 5f; // Engage range (tweak if needed)
+        bool closeToPlayer = distToPlayer < 7.5f; // Engage range (tweak if needed)
 
         if (closeToPlayer)
         {
